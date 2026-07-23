@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/organic-5fcfbf3f-22b2-46e3-8a6f-626813e0ff56/styles.css">
+<script src="_ds/organic-5fcfbf3f-22b2-46e3-8a6f-626813e0ff56/_ds_bundle.js"></script>
+<style>
+  a{text-decoration:none}
+  @media(max-width:720px){.mw-navlinks{display:none !important}}
+</style>
+</helmet>
+<header style="position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--color-bg) 90%,transparent);backdrop-filter:blur(8px);box-shadow:var(--shadow-sm)">
+  <nav style="display:flex;align-items:center;justify-content:space-between;gap:24px;max-width:1200px;margin:0 auto;padding:16px clamp(20px,5vw,72px)">
+    <a href="Meri.Software.dc.html" class="nav-brand" style="font-family:var(--font-heading);font-weight:var(--font-heading-weight);font-size:23px;color:var(--color-text)">Meri.Software</a>
+    <div class="mw-navlinks" style="display:flex;align-items:center;gap:30px">
+      <sc-for list="{{ links }}" as="link" hint-placeholder-count="5">
+        <a href="{{ link.href }}" style="font-size:15px;font-weight:600;color:{{ link.color }}">{{ link.label }}</a>
+      </sc-for>
+    </div>
+    <a href="Contact.dc.html" class="btn btn-primary" style="text-decoration:none">Start a project</a>
+  </nav>
+</header>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;active&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const active = this.props.active ?? '';
+    const items = [
+      ['Home', 'Meri.Software.dc.html', 'home'],
+      ['Services', 'Services.dc.html', 'services'],
+      ['Industries', 'Industries.dc.html', 'industries'],
+      ['Process', 'Process.dc.html', 'process'],
+      ['About', 'About.dc.html', 'about'],
+    ];
+    return {
+      links: items.map(([label, href, key]) => ({
+        label, href,
+        color: key === active ? 'var(--color-accent-700)' : 'var(--color-text)',
+      })),
+    };
+  }
+}
+</script>
+</body>
+</html>

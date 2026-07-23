@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/organic-5fcfbf3f-22b2-46e3-8a6f-626813e0ff56/styles.css">
+<script src="_ds/organic-5fcfbf3f-22b2-46e3-8a6f-626813e0ff56/_ds_bundle.js"></script>
+<style>
+  body{margin:0;background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);text-wrap:pretty}
+  a{text-decoration:none}
+  :focus-visible{outline:2px solid var(--color-accent);outline-offset:2px}
+  @media(max-width:720px){.mw-navlinks{display:none !important}}
+</style>
+</helmet>
+<div>
+  <dc-import name="SiteNav" active="process" hint-size="100%,72px"></dc-import>
+  <main style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
+    <section style="padding:clamp(56px,8vw,104px) 0 clamp(16px,3vw,32px);max-width:760px">
+      <span style="display:inline-block;font-size:13px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:var(--color-accent-700);margin:0 0 18px">How we work</span>
+      <h1 style="font-family:var(--font-heading);font-weight:var(--font-heading-weight);font-size:clamp(36px,5vw,64px);line-height:1.06;letter-spacing:-.02em;margin:0">You work with the person who designs and builds your system.</h1>
+      <p style="font-size:clamp(17px,1.5vw,19px);line-height:1.6;color:color-mix(in srgb,var(--color-text) 80%,transparent);margin:24px 0 0">Every project is taken on personally — no account manager relaying messages to a team you'll never meet. Frontend, backend, integrations, deployment and documentation: we handle the complete build.</p>
+    </section>
+    <section style="padding:clamp(24px,4vw,48px) 0 clamp(40px,6vw,72px)">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px">
+        <sc-for list="{{ steps }}" as="step" hint-placeholder-count="5">
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <span style="font-family:var(--font-heading);font-weight:var(--font-heading-weight);font-size:44px;line-height:1;color:var(--color-accent)">{{ step.n }}</span>
+            <h2 style="font-family:var(--font-heading);font-weight:var(--font-heading-weight);font-size:22px;line-height:1.1;margin:6px 0 0">{{ step.title }}</h2>
+            <p style="font-size:14.5px;line-height:1.55;color:color-mix(in srgb,var(--color-text) 78%,transparent);margin:0">{{ step.copy }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+    <section style="padding:0 0 clamp(56px,8vw,96px)">
+      <div style="background:var(--color-accent-2-100);border-radius:calc(2 * var(--radius-lg));padding:clamp(32px,4vw,56px)">
+        <span style="display:inline-block;font-size:13px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:var(--color-accent-2-800);margin:0 0 14px">What's included</span>
+        <h2 style="font-family:var(--font-heading);font-weight:var(--font-heading-weight);font-size:clamp(24px,2.8vw,36px);line-height:1.12;margin:0;max-width:22ch">The complete build, handled end to end.</h2>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:24px">
+          <span class="tag tag-accent-2">Frontend</span>
+          <span class="tag tag-accent-2">Backend</span>
+          <span class="tag tag-accent-2">Integrations</span>
+          <span class="tag tag-accent-2">Deployment</span>
+          <span class="tag tag-accent-2">Documentation</span>
+        </div>
+        <div style="margin-top:30px"><a href="Contact.dc.html" class="btn btn-primary">Start a project</a></div>
+      </div>
+    </section>
+  </main>
+  <dc-import name="SiteFooter" hint-size="100%,260px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      steps: [
+        { n: '01', title: 'Map', copy: 'We sit with your operation and map the manual processes, edge cases and rules off-the-shelf tools ignore.' },
+        { n: '02', title: 'Design', copy: 'We design the system around your business logic \u2014 not adapted from someone else\u2019s template.' },
+        { n: '03', title: 'Build', copy: 'Frontend, backend, integrations \u2014 the complete build, handled by the person who designed it.' },
+        { n: '04', title: 'Deploy', copy: 'We deploy into your environment and make sure it holds up against the real work.' },
+        { n: '05', title: 'Hand over', copy: 'Full source code and documentation. You own everything \u2014 no dependency on us.' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>
