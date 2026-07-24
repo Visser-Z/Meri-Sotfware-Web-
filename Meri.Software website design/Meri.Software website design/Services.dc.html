@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/organic-5fcfbf3f-22b2-46e3-8a6f-626813e0ff56/styles.css">
+<script src="_ds/organic-5fcfbf3f-22b2-46e3-8a6f-626813e0ff56/_ds_bundle.js"></script>
+<style>
+  body{margin:0;background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);text-wrap:pretty}
+  a{text-decoration:none}
+  :focus-visible{outline:2px solid var(--color-accent);outline-offset:2px}
+  @media(max-width:720px){.mw-navlinks{display:none !important}}
+</style>
+</helmet>
+<div>
+  <dc-import name="SiteNav" active="services" hint-size="100%,72px"></dc-import>
+  <main style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
+    <section style="padding:clamp(56px,8vw,104px) 0 clamp(16px,3vw,32px);max-width:760px">
+      <span style="display:inline-block;font-size:13px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:var(--color-accent-700);margin:0 0 18px">What we build</span>
+      <h1 style="font-family:var(--font-heading);font-weight:var(--font-heading-weight);font-size:clamp(36px,5vw,64px);line-height:1.06;letter-spacing:-.02em;margin:0">Software engineered around how your operation actually runs.</h1>
+      <p style="font-size:clamp(17px,1.5vw,19px);line-height:1.6;color:color-mix(in srgb,var(--color-text) 80%,transparent);margin:24px 0 0">Off-the-shelf AI is built for the average problem. We build for the shift patterns, throughput targets, scrap rates and compliance realities of operations-heavy businesses. Frontend, backend, integrations, deployment and documentation — we handle the complete build so your team can focus on running the operation, not managing software.</p>
+    </section>
+    <section style="padding:clamp(32px,5vw,56px) 0 clamp(56px,8vw,96px)">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px">
+        <sc-for list="{{ services }}" as="service" hint-placeholder-count="5">
+          <div class="card elev-sm" style="display:flex;flex-direction:column;gap:14px;padding:32px;border-radius:var(--radius-lg)">
+            <div style="display:flex;align-items:center;gap:14px">
+              <span style="width:44px;height:44px;flex:none;border-radius:50%;background:var(--color-accent-100);color:var(--color-accent-800);font-family:var(--font-heading);font-weight:var(--font-heading-weight);font-size:17px;display:grid;place-content:center">{{ service.n }}</span>
+              <h2 style="font-family:var(--font-heading);font-weight:var(--font-heading-weight);font-size:24px;line-height:1.1;margin:0">{{ service.title }}</h2>
+            </div>
+            <p style="font-size:15.5px;line-height:1.6;color:color-mix(in srgb,var(--color-text) 80%,transparent);margin:0">{{ service.copy }}</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:8px">
+              <sc-for list="{{ service.tags }}" as="tag" hint-placeholder-count="3">
+                <span class="tag tag-outline">{{ tag }}</span>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="margin-top:48px;display:flex;flex-wrap:wrap;gap:14px;align-items:center">
+        <a href="Contact.dc.html" class="btn btn-primary">Start a project</a>
+        <a href="Process.dc.html" class="btn btn-ghost">See how we work</a>
+      </div>
+    </section>
+  </main>
+  <dc-import name="SiteFooter" hint-size="100%,260px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      services: [
+        { n: '01', title: 'Workflow Automation', copy: 'We map your manual processes and replace them with intelligent pipelines. Less overhead, faster cycles, and zero human error on the work that doesn\u2019t need humans.', tags: ['Process Mapping','API Integration','Event Triggers','Scheduled Jobs'] },
+        { n: '02', title: 'Automated Quoting', copy: 'Pricing engines that parse complex inputs \u2014 materials, dimensions, labour, margin rules \u2014 and generate accurate, branded quotes in seconds, not hours.', tags: ['Pricing Rules','Branded Output','Instant Turnaround'] },
+        { n: '03', title: 'Intelligent Dashboards', copy: 'Custom dashboards and research platforms that turn raw data into decisions, not just charts \u2014 built for operators who need an edge.', tags: ['Live Data Feeds','Custom Reports','Supply Chain','AI Research'] },
+        { n: '04', title: 'Compliance Engines', copy: 'Automated document generation for HACCP, SABS, ESG and ISO standards. Stay compliant without burying your team in paperwork every audit cycle.', tags: ['HACCP','SABS','ESG','ISO'] },
+        { n: '05', title: 'Custom AI Assistants', copy: 'A private AI assistant trained on your company\u2019s documents, SOPs and data \u2014 answers grounded in how your business actually runs.', tags: ['Trained on Your Docs','Grounded Answers','Private'] },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>
