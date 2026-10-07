@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MURR — the back office for fresh-produce consignment · Meri.Software</title>
+  <meta name="description" content="MURR reads market agents' sales and payment reports, keeps your account-sales book, reconciles every payment, tracks what is owed and on the floor, and plans what to take on next.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;450;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/svg+xml" href="images/logo-mark.svg">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/murr.css">
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="container">
+    <nav class="nav">
+      <div class="nav__inner" style="width:100%">
+        <a href="index.html" class="logo" aria-label="Meri.Software home">
+          <img class="logo__mark" src="images/logo-mark.svg" alt="" width="42" height="24">
+          <span><b>Meri</b><i>.Software</i></span>
+        </a>
+
+        <div class="nav__pill">
+          <a href="#how">How it works</a>
+          <a href="#modules">Modules</a>
+          <a href="#principles">Principles</a>
+          <a href="index.html">Meri.Software</a>
+        </div>
+
+        <a href="index.html#contact" class="btn btn--dark nav__cta">Request a demo</a>
+
+        <button class="nav__toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#how">How it works</a>
+      <a href="#modules">Modules</a>
+      <a href="#principles">Principles</a>
+      <a href="index.html">Meri.Software home</a>
+      <a href="index.html#contact" class="btn btn--dark">Request a demo</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="container m-hero">
+      <div class="m-hero__copy">
+        <div class="hero__tags">
+          <span class="tag">Flagship product</span>
+          <span class="tag tag--ghost">AgriTech</span>
+          <span class="tag tag--ghost">Desktop &amp; web</span>
+        </div>
+        <h1 class="display display--xl">MURR.</h1>
+        <p class="m-hero__lede">
+          The back office for fresh-produce consignment. Your produce goes to market agents,
+          and all that comes back is their reports. MURR reads those reports, keeps your book,
+          matches every payment, tracks what you're owed and what's still on the floor, and tells you what to take on next.
+        </p>
+        <div class="hero__actions">
+          <a href="#modules" class="btn btn--dark">Explore the modules <span class="arrow">↓</span></a>
+          <a href="index.html#contact" class="btn btn--ghost">Request a demo</a>
+        </div>
+      </div>
+
+      <div class="browser m-hero__shot reveal">
+        <div class="browser__bar" aria-hidden="true">
+          <span class="browser__dots"><i></i><i></i><i></i></span>
+          <span class="browser__url">MURR · Insights</span>
+          <span class="tag browser__demo">Sample data</span>
+        </div>
+        <button class="shot" data-full="images/murr/insights.jpg" aria-label="View the Insights screen full size">
+          <img src="images/murr/insights.jpg" width="2400" height="2250"
+               alt="MURR Insights: deductions worth asking about, sales value, cartons, statements, products, markets and agents, and best sellers by fruit.">
+        </button>
+      </div>
+    </section>
+
+    <!-- ============ MODULE STRIP ============ -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track">
+        <div class="ticker__item">Sales capture <span class="dot"></span> Reconciliation <span class="dot"></span> Tracking <span class="dot"></span> Insights <span class="dot"></span> Reports <span class="dot"></span> Procurement <span class="dot"></span> Assistant <span class="dot"></span></div>
+        <div class="ticker__item">Sales capture <span class="dot"></span> Reconciliation <span class="dot"></span> Tracking <span class="dot"></span> Insights <span class="dot"></span> Reports <span class="dot"></span> Procurement <span class="dot"></span> Assistant <span class="dot"></span></div>
+      </div>
+    </div>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="section section--dark" id="how">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <p class="mono muted"><span class="dot"></span>How consignment works</p>
+            <h2 class="display display--lg">You're not<br>there when<br>it sells.</h2>
+          </div>
+          <p class="subheading">
+            Produce is placed with a market agent, sold off the floor over days, and paid out less the agent's deductions.
+            The only account of what happened is the agent's reports, and most businesses still type them into Excel by hand.
+            MURR takes that job over and checks the work.
+          </p>
+        </div>
+
+        <ol class="flow">
+          <li class="flow__step reveal">
+            <span class="mono muted">01</span>
+            <h3>Produce goes to market</h3>
+            <p>Deliveries leave for the wholesale markets on consignment. Nothing is bought, so nothing is known until the agent reports.</p>
+          </li>
+          <li class="flow__step reveal">
+            <span class="mono muted">02</span>
+            <h3>Agents sell and report</h3>
+            <p>Daily sales, account-sale statements and payment runs arrive as PDFs and CSVs, each in its own format, often days apart.</p>
+          </li>
+          <li class="flow__step flow__step--murr reveal">
+            <span class="mono">03</span>
+            <h3>MURR does the rest</h3>
+            <p>Reads every report, updates your book, matches payments to sales, settles suppliers and shows where the money and stock stand.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ MODULES ============ -->
+    <section class="section" id="modules">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <p class="mono"><span class="dot dot--black"></span>Seven modules, one system</p>
+            <h2 class="display display--lg">Explore<br>MURR.</h2>
+          </div>
+          <p class="subheading">
+            Every screen below is the real app, captured with sample data. Click any screen to see it full size.
+          </p>
+        </div>
+      </div>
+
+      <nav class="m-nav" aria-label="MURR modules">
+        <div class="container">
+          <div class="m-nav__pill">
+            <a href="#m-sales">Sales capture</a>
+            <a href="#m-reconcile">Reconciliation</a>
+            <a href="#m-tracking">Tracking</a>
+            <a href="#m-insights">Insights</a>
+            <a href="#m-reports">Reports</a>
+            <a href="#m-procurement">Procurement</a>
+            <a href="#m-assistant">Assistant</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container m-modules">
+
+        <!-- 01 Sales capture -->
+        <article class="module reveal" id="m-sales">
+          <div class="module__copy">
+            <span class="module__num mono">01 / Sales capture</span>
+            <h3 class="module__title">Drop in the reports. MURR keeps the book.</h3>
+            <p class="module__lede">Drop the agents' Daily Sales Detail, as PDF or CSV and several at once. MURR reads every docket, works out what goes on the book and shows it to you before anything is saved.</p>
+            <ul class="module__points">
+              <li>Recognises each report by what's in it, not its file name, and refuses one loaded in the wrong place</li>
+              <li>Splits each delivery by the payment run it sold under, and keeps returns visible instead of folding them away</li>
+              <li>Appends to your existing Excel workbook with your formulas intact and your notes column untouched</li>
+              <li>Flags anything it can't prove, like a missing delivery note or product code, and remembers your answer next time</li>
+            </ul>
+          </div>
+          <div class="browser module__shot">
+            <div class="browser__bar" aria-hidden="true"><span class="browser__dots"><i></i><i></i><i></i></span><span class="browser__url">Sales &amp; Payments · Review</span></div>
+            <button class="shot shot--tall" data-full="images/murr/sales-review.jpg" aria-label="View the sales review screen full size">
+              <img src="images/murr/sales-review.jpg" width="1268" height="2314" loading="lazy"
+                   alt="MURR sales review: rows read, delivery-note groups, cartons and sales value, with the rows grouped by delivery note ready to save to the book.">
+            </button>
+          </div>
+        </article>
+
+        <!-- 02 Reconciliation -->
+        <article class="module module--flip reveal" id="m-reconcile">
+          <div class="module__copy">
+            <span class="module__num mono">02 / Payments &amp; reconciliation</span>
+            <h3 class="module__title">Every payment matched to the sales it pays for.</h3>
+            <p class="module__lede">Drop the Payment Details and MURR matches each payment to its sales by account-sale number. That's an exact match, with no near misses.</p>
+            <ul class="module__points">
+              <li>Each sale is marked matched, outstanding, over or unpaid, accurate to the cent</li>
+              <li>A payment's nett is split across its products by sales value, so the rows always add up exactly</li>
+              <li>Agent deductions are compared with your own usual rate, and anything well above it is flagged with the figures</li>
+              <li>Payments the report doesn't break down are shown as unattributed, never quietly dropped</li>
+            </ul>
+          </div>
+          <div class="browser module__shot">
+            <div class="browser__bar" aria-hidden="true"><span class="browser__dots"><i></i><i></i><i></i></span><span class="browser__url">Sales &amp; Payments · Reconcile</span></div>
+            <button class="shot shot--tall" data-full="images/murr/reconcile.jpg" aria-label="View the reconciliation screen full size">
+              <img src="images/murr/reconcile.jpg" width="1238" height="1470" loading="lazy"
+                   alt="MURR reconciliation: 9 payments matched, nett matched total, one account sale flagged for a 26% deduction against a 15% usual rate, and the matched account sales listed.">
+            </button>
+          </div>
+        </article>
+
+        <!-- 03 Tracking -->
+        <article class="module reveal" id="m-tracking">
+          <div class="module__copy">
+            <span class="module__num mono">03 / Tracking</span>
+            <h3 class="module__title">What's been paid, what's still to come, and what's on the floor.</h3>
+            <p class="module__lede">A running position across the whole book, so you always know your exposure. You can narrow it to any month or week.</p>
+            <ul class="module__points">
+              <li>Paid versus still to come, with outstanding money grouped by market and agent and how long it has waited</li>
+              <li>Stock on hand at every market, with lines sitting too long marked red or orange</li>
+              <li>Payments it can't place with certainty are listed to check, and moved to the right sale in one click</li>
+              <li>Sales per day, with what was paid and what is still owed for each day</li>
+            </ul>
+          </div>
+          <div class="browser module__shot">
+            <div class="browser__bar" aria-hidden="true"><span class="browser__dots"><i></i><i></i><i></i></span><span class="browser__url">Tracking</span></div>
+            <button class="shot" data-full="images/murr/tracking.jpg" aria-label="View the Tracking screen full size">
+              <img src="images/murr/tracking.jpg" width="2400" height="1516" loading="lazy"
+                   alt="MURR Tracking: amount paid and still to come, outstanding money by market and agent, and stock on hand by market with red and orange warnings.">
+            </button>
+          </div>
+        </article>
+
+        <!-- 04 Insights -->
+        <article class="module module--flip reveal" id="m-insights">
+          <div class="module__copy">
+            <span class="module__num mono">04 / Insights</span>
+            <h3 class="module__title">What sells, where, and how the agents are treating your money.</h3>
+            <p class="module__lede">A dashboard over your saved history, for all time, a month or a single week.</p>
+            <ul class="module__points">
+              <li>Sales value and cartons, with what sold, what came back and the net shown separately</li>
+              <li>Best sellers by fruit, and totals by market and agent, each opening to show product detail</li>
+              <li>Statements that kept well above your usual deduction are flagged, with the numbers that raised the flag</li>
+              <li>Open about its limits: where the agents' exports leave a figure blank, MURR says so</li>
+            </ul>
+          </div>
+          <div class="browser module__shot">
+            <div class="browser__bar" aria-hidden="true"><span class="browser__dots"><i></i><i></i><i></i></span><span class="browser__url">Insights · By market</span></div>
+            <button class="shot" data-full="images/murr/market.jpg" aria-label="View the market drill-down full size">
+              <img src="images/murr/market.jpg" width="2400" height="932" loading="lazy"
+                   alt="MURR Insights by market: one market opened to show each product sold there, its agent, sales value and cartons.">
+            </button>
+          </div>
+        </article>
+
+        <!-- 05 Reports -->
+        <article class="module reveal" id="m-reports">
+          <div class="module__copy">
+            <span class="module__num mono">05 / Reports</span>
+            <h3 class="module__title">Any two dates. The full picture.</h3>
+            <p class="module__lede">Pick a range or a whole month. Sales are counted on the day they sold, and payments on the day they arrived.</p>
+            <ul class="module__points">
+              <li>Sales value, payments received, nett after the agent's cut, and how much is reconciled</li>
+              <li>A day-by-day chart, plus tables by product, by day and by agent</li>
+              <li>Cartons, returns, days to sell and average price per carton for each product</li>
+              <li>Export to Excel or print in one click</li>
+            </ul>
+          </div>
+          <div class="browser module__shot">
+            <div class="browser__bar" aria-hidden="true"><span class="browser__dots"><i></i><i></i><i></i></span><span class="browser__url">Reports · September 2026</span></div>
+            <button class="shot shot--tall" data-full="images/murr/reports.jpg" aria-label="View the Reports screen full size">
+              <img src="images/murr/reports.jpg" width="2400" height="2066" loading="lazy"
+                   alt="MURR Reports for September: sales value, payments received, nett and reconciled totals, a day-by-day sales chart, and a table by product.">
+            </button>
+          </div>
+        </article>
+
+        <!-- 06 Procurement -->
+        <article class="module module--flip reveal" id="m-procurement">
+          <div class="module__copy">
+            <span class="module__num mono">06 / Procurement</span>
+            <h3 class="module__title">What to take on next month, how much, and where to send it.</h3>
+            <p class="module__lede">A buy plan worked out from what has actually cleared, how fast, at what price and how recently. It's calculated, not guessed, so the same history always gives the same plan.</p>
+            <ul class="module__points">
+              <li>Cartons to take on and what the market should return, minus what is still on the floor</li>
+              <li>Each product is marked high, steady or hold, with the reasons in plain English</li>
+              <li>Room to grow and test loads, where a product has outperformed or never been tried</li>
+              <li>When the money lands: how quickly each agent pays, plus an order sheet as a PDF</li>
+            </ul>
+          </div>
+          <div class="browser module__shot">
+            <div class="browser__bar" aria-hidden="true"><span class="browser__dots"><i></i><i></i><i></i></span><span class="browser__url">Procurement · November plan</span></div>
+            <button class="shot shot--tall" data-full="images/murr/procurement.jpg" aria-label="View the Procurement screen full size">
+              <img src="images/murr/procurement.jpg" width="2400" height="1900" loading="lazy"
+                   alt="MURR Procurement: cartons to take on, what the market should return, stock already on the floor, and a prioritised plan by product.">
+            </button>
+          </div>
+        </article>
+
+        <!-- 07 Assistant -->
+        <article class="module reveal" id="m-assistant">
+          <div class="module__copy">
+            <span class="module__num mono">07 / Assistant</span>
+            <h3 class="module__title">Ask your book a question in plain English.</h3>
+            <p class="module__lede">"Which market pays the most for grapes?" "What should I buy more of next month?" Answers come from your recorded history, and conversations are kept so you can pick up where you left off.</p>
+            <ul class="module__points">
+              <li>Every total and ranking is calculated by the same code behind the dashboard. The AI only explains the answer.</li>
+              <li>Read-only by design: it can never change your book or your history</li>
+              <li>It tells you when goods came back, so a net figure isn't mistaken for the whole story</li>
+              <li>Open it from any screen, including straight from the buy plan</li>
+            </ul>
+          </div>
+          <div class="browser module__shot">
+            <div class="browser__bar" aria-hidden="true"><span class="browser__dots"><i></i><i></i><i></i></span><span class="browser__url">Ask</span></div>
+            <button class="shot" data-full="images/murr/assistant.jpg" aria-label="View the assistant panel full size">
+              <img src="images/murr/assistant.jpg" width="2400" height="1500" loading="lazy"
+                   alt="MURR assistant panel open beside Insights, offering questions such as what sold best last month and which market pays the most for grapes.">
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ============ PRINCIPLES ============ -->
+    <section class="section section--dark m-principles" id="principles">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <p class="mono muted"><span class="dot"></span>Built to handle real money</p>
+            <h2 class="display display--lg">Rules MURR<br>won't break.</h2>
+          </div>
+          <p class="subheading">
+            You settle real money with real suppliers off these numbers. A figure that's quietly wrong is worse than a gap you can see,
+            so MURR is built around a few firm rules.
+          </p>
+        </div>
+
+        <div class="rules">
+          <div class="rule reveal"><span class="mono">01</span><h3>No figure is invented</h3><p>Where a report doesn't carry a number, MURR asks for it once or shows the gap. It never fills it with a default.</p></div>
+          <div class="rule reveal"><span class="mono">02</span><h3>Your workbook stays yours</h3><p>New rows are appended beneath your own. Formulas are kept and your notes column is never written to.</p></div>
+          <div class="rule reveal"><span class="mono">03</span><h3>No settlement at a guessed rate</h3><p>A supplier is never owed money worked out from a missing deal. Unsold stock never becomes a debt.</p></div>
+          <div class="rule reveal"><span class="mono">04</span><h3>Every flag shows its numbers</h3><p>Nothing is called fraud. A high deduction is a question with the figures attached, not an accusation.</p></div>
+          <div class="rule reveal"><span class="mono">05</span><h3>The AI never does the maths</h3><p>Totals are calculated by code. The assistant only explains them and can't change a single record.</p></div>
+          <div class="rule reveal"><span class="mono">06</span><h3>Access is controlled</h3><p>Invite-only sign-in. Staff and admins see only what they're allowed to, and history can't be wiped in one go.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PLATFORMS + CTA ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="cta m-cta reveal">
+          <div>
+            <span class="tag">See it with your own reports</span>
+            <h2 class="display display--lg" style="margin-top:24px">Run your book<br>on MURR.</h2>
+            <p class="subheading" style="margin-top:24px;max-width:460px">
+              Available as a Windows desktop app and a web dashboard. We'll walk you through it using reports in the format your agents already send.
+            </p>
+          </div>
+          <div class="m-cta__side">
+            <ul class="cta__steps">
+              <li><span class="mono muted">01</span>Book a 30-minute demo</li>
+              <li><span class="mono muted">02</span>We set it up around your workbook</li>
+              <li><span class="mono muted">03</span>Drop in your next round of reports</li>
+            </ul>
+            <a href="index.html#contact" class="btn btn--dark" style="align-self:flex-start">Request a demo <span class="arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="index.html" class="logo">
+            <img class="logo__mark" src="images/logo-mark.svg" alt="" width="42" height="24">
+            <span><b>Meri</b><i>.Software</i></span>
+          </a>
+          <p class="footer__blurb">MURR is an AgriTech product by Meri.Software.</p>
+        </div>
+        <div>
+          <h5>MURR</h5>
+          <ul>
+            <li><a href="#how">How it works</a></li>
+            <li><a href="#modules">Modules</a></li>
+            <li><a href="#principles">Principles</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Meri.Software</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="terms.html">Terms of Use</a></li>
+            <li><a href="privacy.html">Privacy Notice</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Say hello</h5>
+          <ul>
+            <li><a href="mailto:VisserMeridian@outlook.com">VisserMeridian@outlook.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="display footer__word" aria-hidden="true">MURR</div>
+
+      <div class="footer__bottom">
+        <span class="mono">© <span id="year">2026</span> Meri Software (Pty) Ltd · Reg. 2026/640209/07</span>
+        <span class="mono"><a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Full-size screenshot viewer -->
+  <dialog class="lightbox" id="lightbox" aria-label="Screenshot, full size">
+    <button class="lightbox__close" aria-label="Close">×</button>
+    <img alt="">
+  </dialog>
+
+  <script src="js/main.js"></script>
+  <script src="js/murr.js"></script>
+</body>
+</html>
