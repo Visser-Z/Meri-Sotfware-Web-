@@ -1,4 +1,4 @@
-// MURR page: full-size screenshot viewer + module nav highlighting
+// Meri Fruits page: full-size screenshot viewer + module nav highlighting
 
 // Lightbox
 const lightbox = document.getElementById('lightbox');

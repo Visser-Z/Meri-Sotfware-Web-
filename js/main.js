@@ -88,7 +88,7 @@ if (typed && !reduceMotion) {
   setTimeout(tick, 1200);
 }
 
-// Inside MURR showcase tabs
+// Inside Meri Fruits showcase tabs
 const showcaseTabs = document.querySelectorAll('.showcase__tab');
 showcaseTabs.forEach((tab, index) => {
   tab.addEventListener('click', () => {

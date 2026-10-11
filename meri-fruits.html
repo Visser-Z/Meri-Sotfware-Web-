@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meri Fruits — the back office for fresh-produce consignment · Meri.Software</title>
+  <meta name="description" content="Meri Fruits pulls the market's sales and payment reports every morning, keeps your book, matches every payment, tracks stock from your own delivery notes, and plans where next week's stock should go.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;450;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/svg+xml" href="images/logo-mark.svg">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/meri-fruits.css">
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="container">
+    <nav class="nav">
+      <div class="nav__inner" style="width:100%">
+        <a href="index.html" class="logo" aria-label="Meri.Software home">
+          <img class="logo__mark" src="images/logo-mark.svg" alt="" width="42" height="24">
+          <span><b>Meri</b><i>.Software</i></span>
+        </a>
+
+        <div class="nav__pill">
+          <a href="#how">How it works</a>
+          <a href="#modules">Modules</a>
+          <a href="#principles">Principles</a>
+          <a href="index.html">Meri.Software</a>
+        </div>
+
+        <a href="index.html#contact" class="btn btn--dark nav__cta">Request a demo</a>
+
+        <button class="nav__toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#how">How it works</a>
+      <a href="#modules">Modules</a>
+      <a href="#principles">Principles</a>
+      <a href="index.html">Meri.Software home</a>
+      <a href="index.html#contact" class="btn btn--dark">Request a demo</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="container m-hero">
+      <div class="m-hero__copy">
+        <div class="hero__tags">
+          <span class="tag">Flagship app</span>
+          <span class="tag tag--ghost">AgriTech</span>
+          <span class="tag tag--ghost">On the Meri Agents platform</span>
+        </div>
+        <h1 class="display display--xl">Meri<br>Fruits.</h1>
+        <p class="m-hero__lede">
+          The back office for fresh-produce consignment. Every morning Meri Fruits pulls the market's sales and payment
+          reports for you. It keeps your book, matches every payment, tracks every carton from your own delivery notes,
+          and tells you where next week's stock should go.
+        </p>
+        <div class="hero__actions">
+          <a href="#modules" class="btn btn--dark">Explore the app <span class="arrow">↓</span></a>
+          <a href="index.html#contact" class="btn btn--ghost">Request a demo</a>
+        </div>
+      </div>
+
+      <div class="browser m-hero__shot reveal">
+        <div class="browser__bar" aria-hidden="true">
+          <span class="browser__dots"><i></i><i></i><i></i></span>
+          <span class="browser__url">Meri Fruits · Insights</span>
+          <span class="tag browser__demo">Sample data</span>
+        </div>
+        <button class="shot" data-full="images/meri-fruits/insights.jpg" aria-label="View the Insights screen full size">
+          <img src="images/meri-fruits/insights.jpg" width="2400" height="1718"
+               alt="Meri Fruits Insights: statements worth asking about, sales value, cartons, statements, products, markets and agents, with best sellers, sales by market and sales per day.">
+        </button>
+      </div>
+    </section>
+
+    <!-- ============ MODULE STRIP ============ -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track">
+        <div class="ticker__item">Daily pull <span class="dot"></span> Sales <span class="dot"></span> Reconciliation <span class="dot"></span> Tracking <span class="dot"></span> Stock <span class="dot"></span> Insights <span class="dot"></span> Procurement <span class="dot"></span> Dispatch <span class="dot"></span> Assistant <span class="dot"></span></div>
+        <div class="ticker__item">Daily pull <span class="dot"></span> Sales <span class="dot"></span> Reconciliation <span class="dot"></span> Tracking <span class="dot"></span> Stock <span class="dot"></span> Insights <span class="dot"></span> Procurement <span class="dot"></span> Dispatch <span class="dot"></span> Assistant <span class="dot"></span></div>
+      </div>
+    </div>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="section section--dark" id="how">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <p class="mono muted"><span class="dot"></span>How consignment works</p>
+            <h2 class="display display--lg">You're not<br>there when<br>it sells.</h2>
+          </div>
+          <p class="subheading">
+            Produce is placed with a market agent, sold off the floor over days, and paid out less the agent's deductions.
+            The only account of what happened is the agent's reports, and most businesses still type them into Excel by hand.
+            Meri Fruits takes that job over, checks the work, and plans what happens next.
+          </p>
+        </div>
+
+        <ol class="flow flow--four">
+          <li class="flow__step reveal">
+            <span class="mono muted">01</span>
+            <h3>Stock leaves on your delivery note</h3>
+            <p>Every load is recorded the way you write it, so you know what went where before the market reports a single sale.</p>
+          </li>
+          <li class="flow__step reveal">
+            <span class="mono muted">02</span>
+            <h3>Agents sell and report</h3>
+            <p>Daily sales, payment runs and summaries land on the market's portal, each in its own format and often days apart.</p>
+          </li>
+          <li class="flow__step reveal">
+            <span class="mono muted">03</span>
+            <h3>Pulled every morning</h3>
+            <p>At 08:00 Meri Fruits signs in to the market portal, collects yesterday's reports and puts them on the book.</p>
+          </li>
+          <li class="flow__step flow__step--app reveal">
+            <span class="mono">04</span>
+            <h3>You see it all, and plan</h3>
+            <p>What's paid, what's owed, what's on the floor, and where next week's stock should go, all in one app.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ MODULES ============ -->
+    <section class="section" id="modules">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <p class="mono"><span class="dot dot--black"></span>Nine modules, one app</p>
+            <h2 class="display display--lg">Explore<br>Meri Fruits.</h2>
+          </div>
+          <p class="subheading">
+            Every screen below is the real app, captured with sample data. Click any screen to see it full size.
+          </p>
+        </div>
+      </div>
+
+      <nav class="m-nav" aria-label="Meri Fruits modules">
+        <div class="container">
+          <div class="m-nav__pill">
+            <a href="#m-pull">Daily pull</a>
+            <a href="#m-sales">Sales</a>
+            <a href="#m-reconcile">Reconciliation</a>
+            <a href="#m-tracking">Tracking</a>
+            <a href="#m-stock">Stock</a>
+            <a href="#m-insights">Insights</a>
+            <a href="#m-procurement">Procurement</a>
+            <a href="#m-supply">Weekly stock &amp; dispatch</a>
+            <a href="#m-assistant">Assistant</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container m-modules">
+
+        <!-- 01 Daily pull -->
+        <article class="module reveal" id="m-pull">
+          <div class="module__copy">
+            <span class="module__num mono">01 / Daily pull <span class="tag tag--new">New</span></span>
+            <h3 class="module__title">Yesterday's reports, on the book by 8am.</h3>
+            <p class="module__lede">No more downloading reports and dropping them in. Every morning Meri Fruits signs in to the market's portal, collects yesterday's sales and payments, and saves them for you.</p>
+            <ul class="module__points">
+              <li>Sales and payment reports pulled automatically every day at 08:00</li>
+              <li>Clean rows are saved straight away, and anything that needs a check waits for you in review</li>
+              <li>Sales not yet paid are pulled again each day for up to two weeks, and missed days are caught up</li>
+              <li>Your portal password is stored encrypted, and only admins can change it</li>
+            </ul>
+          </div>
+          <div class="browser module__shot">
+            <div class="browser__bar" aria-hidden="true"><span class="browser__dots"><i></i><i></i><i></i></span><span class="browser__url">Settings · Market portal</span></div>
+            <button class="shot" data-full="images/meri-fruits/settings.jpg" aria-label="View the Settings screen full size">
+              <img src="images/meri-fruits/settings.jpg" width="2400" height="1166" loading="lazy"
+                   alt="Meri Fruits Settings: the market portal account, a pull every day at 08:00, and the sales and payments pulled each day.">
+            </button>
+          </div>
+        </article>
+
+        <!-- 02 Sales -->
+        <article class="module module--flip reveal" id="m-sales">
+          <div class="module__copy">
+            <span class="module__num mono">02 / Sales capture</span>
+            <h3 class="module__title">Every docket read. Your book kept.</h3>
+            <p class="module__lede">Pulled or dropped in by hand, as PDF or CSV, Meri Fruits reads every docket, works out what goes on the book and shows you anything it's unsure of before it saves.</p>
+            <ul class="module__points">
+              <li>Recognises each report by what's in it, not its file name</li>
+              <li>Splits each delivery by the payment run it sold under, and keeps returns visible</li>
+              <li>Dropping a report over days already on the book does no harm. It says what was already there.</li>
+              <li>Flags anything it can't prove, like a missing product code, and remembers your answer</li>
+            </ul>
+          </div>
+          <div class="browser module__shot">
+            <div class="browser__bar" aria-hidden="true"><span class="browser__dots"><i></i><i></i><i></i></span><span class="browser__url">Sales &amp; Payments · Review</span></div>
+            <button class="shot shot--tall" data-full="images/meri-fruits/sales-review.jpg" aria-label="View the sales review screen full size">
+              <img src="images/meri-fruits/sales-review.jpg" width="1268" height="2308" loading="lazy"
+                   alt="Meri Fruits sales review: rows read, delivery-note groups, cartons and sales value, with rows grouped by delivery note ready to save.">
+            </button>
+          </div>
+        </article>
+
+        <!-- 03 Reconciliation -->
+        <article class="module reveal" id="m-reconcile">
+          <div class="module__copy">
+            <span class="module__num mono">03 / Payments &amp; reconciliation</span>
+            <h3 class="module__title">Every payment matched to the sales it pays for.</h3>
+            <p class="module__lede">Each payment is matched to its sales by account-sale number, to the cent. Then the book is checked against the market's own records.</p>
+            <ul class="module__points">
+              <li>Each sale is marked matched, outstanding, over or unpaid</li>
+              <li>Deductions and VAT are read off every payment, and anything well above your usual rate is flagged</li>
+              <li>Drop in the market's Summary of Deliveries and every outstanding line shows whether the market agrees it's unpaid</li>
+              <li>Money the market paid without itemising is placed on the right delivery, never dropped</li>
+            </ul>
+          </div>
+          <div class="browser module__shot">
+            <div class="browser__bar" aria-hidden="true"><span class="browser__dots"><i></i><i></i><i></i></span><span class="browser__url">Sales &amp; Payments · Reconcile</span></div>
+            <button class="shot shot--tall" data-full="images/meri-fruits/reconcile.jpg" aria-label="View the reconciliation screen full size">
+              <img src="images/meri-fruits/reconcile.jpg" width="1238" height="1430" loading="lazy"
+                   alt="Meri Fruits reconciliation: 9 payments matched, the nett matched, and one account sale flagged for a 26% deduction against a 15% usual rate.">
+            </button>
+          </div>
+        </article>
+
+        <!-- 04 Tracking -->
+        <article class="module module--flip reveal" id="m-tracking">
+          <div class="module__copy">
+            <span class="module__num mono">04 / Tracking</span>
+            <h3 class="module__title">What's been paid, what's still to come, and why.</h3>
+            <p class="module__lede">A running position across the whole book, narrowed to any month or week whenever you want.</p>
+            <ul class="module__points">
+              <li>Paid shown the way the market counts it: what reached you, with the gross underneath</li>
+              <li>Outstanding money by market and agent, how long each line has waited, and why it's owed</li>
+              <li>Payments per delivery note: what the market paid, what it took and the nett to you</li>
+              <li>Payments it can't place with certainty are listed to check, and moved in one click</li>
+            </ul>
+          </div>
+          <div class="browser module__shot">
+            <div class="browser__bar" aria-hidden="true"><span class="browser__dots"><i></i><i></i><i></i></span><span class="browser__url">Tracking</span></div>
+            <button class="shot shot--tall" data-full="images/meri-fruits/tracking.jpg" aria-label="View the Tracking screen full size">
+              <img src="images/meri-fruits/tracking.jpg" width="2400" height="2133" loading="lazy"
+                   alt="Meri Fruits Tracking: paid and still to come, outstanding by market and agent, stock on hand, and payments per delivery note.">
+            </button>
+          </div>
+        </article>
+
+        <!-- 05 Stock -->
+        <article class="module reveal" id="m-stock">
+          <div class="module__copy">
+            <span class="module__num mono">05 / Stock <span class="tag tag--new">New</span></span>
+            <h3 class="module__title">Every carton, from your own delivery notes.</h3>
+            <p class="module__lede">The market's reports only show a line once something on it has sold, so unsold stock is invisible to them. Meri Fruits starts from your delivery notes instead.</p>
+            <ul class="module__points">
+              <li>Enter each note the way it's written, like "54+13", and it's tied to the market's consignments</li>
+              <li>Every line shows as on the floor, sold and owed, or paid</li>
+              <li>Where the market booked something different or fewer cartons, it tells you</li>
+              <li>Cartons on the floor per market, a printable stocktake sheet, and unsold stock carried into the new month</li>
+            </ul>
+          </div>
+          <div class="browser module__shot">
+            <div class="browser__bar" aria-hidden="true"><span class="browser__dots"><i></i><i></i><i></i></span><span class="browser__url">Stock</span></div>
+            <button class="shot shot--tall" data-full="images/meri-fruits/stock.jpg" aria-label="View the Stock screen full size">
+              <img src="images/meri-fruits/stock.jpg" width="2400" height="1916" loading="lazy"
+                   alt="Meri Fruits Stock: cartons on the floor, sold but not paid, sold and paid, per-market stocktake sheets, and delivery notes with their status.">
+            </button>
+          </div>
+        </article>
+
+        <!-- 06 Insights -->
+        <article class="module module--flip reveal" id="m-insights">
+          <div class="module__copy">
+            <span class="module__num mono">06 / Insights</span>
+            <h3 class="module__title">What sells, where, and how the agents treat your money.</h3>
+            <p class="module__lede">An overview of best sellers, markets and sales per day. Open any card for the detail.</p>
+            <ul class="module__points">
+              <li>Sales per day charted by month across all time. Click a month to open its days</li>
+              <li>Best sellers and totals by market and agent, each with its own page</li>
+              <li>Statements that kept well above your usual deduction are flagged with the numbers</li>
+              <li>What sold, what came back and the net are always shown separately</li>
+            </ul>
+          </div>
+          <div class="browser module__shot">
+            <div class="browser__bar" aria-hidden="true"><span class="browser__dots"><i></i><i></i><i></i></span><span class="browser__url">Insights · Sales per day</span></div>
+            <button class="shot" data-full="images/meri-fruits/sales-days.jpg" aria-label="View sales per day full size">
+              <img src="images/meri-fruits/sales-days.jpg" width="2400" height="1590" loading="lazy"
+                   alt="Meri Fruits sales per day: one bar per month split by product, with each month's sold, paid and owed totals.">
+            </button>
+          </div>
+        </article>
+
+        <!-- 07 Procurement -->
+        <article class="module reveal" id="m-procurement">
+          <div class="module__copy">
+            <span class="module__num mono">07 / Procurement</span>
+            <h3 class="module__title">What to take on, how much, and which market gets it.</h3>
+            <p class="module__lede">A buy plan worked out from what has actually cleared, how fast and at what price. Each product's order is split across the markets that sell it best.</p>
+            <ul class="module__points">
+              <li>Cartons to take on and what the market should return, minus what's already on the floor</li>
+              <li>Each market is filled to what it has shown it can take, best-returning market first</li>
+              <li>How each market pays: days to money, what it owes, and a warning on money over 30 days old</li>
+              <li>An order sheet and a dispatch sheet as PDFs, ready for whoever loads the trucks</li>
+            </ul>
+          </div>
+          <div class="browser module__shot">
+            <div class="browser__bar" aria-hidden="true"><span class="browser__dots"><i></i><i></i><i></i></span><span class="browser__url">Procurement · November plan</span></div>
+            <button class="shot shot--tall" data-full="images/meri-fruits/procurement.jpg" aria-label="View the Procurement screen full size">
+              <img src="images/meri-fruits/procurement.jpg" width="2400" height="2416" loading="lazy"
+                   alt="Meri Fruits Procurement: cartons to take on, what the market should return, where it goes across three markets, and the plan by product.">
+            </button>
+          </div>
+        </article>
+
+        <!-- 08 Weekly stock & dispatch -->
+        <article class="module module--flip reveal" id="m-supply">
+          <div class="module__copy">
+            <span class="module__num mono">08 / Weekly stock &amp; dispatch <span class="tag tag--new">New</span></span>
+            <h3 class="module__title">Paste the supplier's list. Get the loading plan.</h3>
+            <p class="module__lede">Your supplier has a fixed amount each week. Paste their list exactly as it came, and Meri Fruits splits that stock across your markets.</p>
+            <ul class="module__points">
+              <li>Reads the cartons on each line and matches it to a product on your book</li>
+              <li>Lines that could be two products are left for you to pick, never guessed</li>
+              <li>Shows what goes on each market's truck, and where that's more than the market usually takes</li>
+              <li>The agent writes up the loading instructions, and they download as a dispatch sheet</li>
+            </ul>
+          </div>
+          <div class="browser module__shot">
+            <div class="browser__bar" aria-hidden="true"><span class="browser__dots"><i></i><i></i><i></i></span><span class="browser__url">Procurement · Supplier's stock this week</span></div>
+            <button class="shot shot--tall" data-full="images/meri-fruits/supply.jpg" aria-label="View the supplier stock planner full size">
+              <img src="images/meri-fruits/supply.jpg" width="2400" height="1960" loading="lazy"
+                   alt="Meri Fruits supplier stock planner: a pasted supplier list matched to products, split across three markets with what goes on each truck.">
+            </button>
+          </div>
+        </article>
+
+        <!-- 09 Assistant -->
+        <article class="module reveal" id="m-assistant">
+          <div class="module__copy">
+            <span class="module__num mono">09 / Assistant</span>
+            <h3 class="module__title">Ask your book a question in plain English.</h3>
+            <p class="module__lede">"Which market pays the most for grapes?" "What should I buy more of next month?" The assistant sees every screen, from Tracking to Stock to the buy plan, and conversations are kept.</p>
+            <ul class="module__points">
+              <li>Every total and ranking is calculated by the same code behind the dashboard. The AI only explains it.</li>
+              <li>It knows each month's own figures and the market's verdict on every outstanding line</li>
+              <li>Read-only by design: it can never change your book or your history</li>
+              <li>Open it from any screen, including straight from the buy plan</li>
+            </ul>
+          </div>
+          <div class="browser module__shot">
+            <div class="browser__bar" aria-hidden="true"><span class="browser__dots"><i></i><i></i><i></i></span><span class="browser__url">Ask</span></div>
+            <button class="shot" data-full="images/meri-fruits/assistant.jpg" aria-label="View the assistant panel full size">
+              <img src="images/meri-fruits/assistant.jpg" width="2400" height="1500" loading="lazy"
+                   alt="Meri Fruits assistant panel open beside Insights, offering questions such as what sold best last month and which market pays the most for grapes.">
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ============ ANY DEVICE ============ -->
+    <section class="section m-device">
+      <div class="container m-device__grid">
+        <div>
+          <p class="mono"><span class="dot dot--black"></span>Office, market floor or bakkie</p>
+          <h2 class="display display--lg">On any<br>screen.</h2>
+          <p class="subheading" style="margin-top:24px;max-width:460px">
+            Meri Fruits is built for phones and tablets as well as the office. The tabs scroll, lists keep their amounts
+            in view, and the buy plan turns into one card per line, so you can check what's owed from the market floor.
+          </p>
+          <ul class="cta__steps" style="margin-top:var(--spacing-40)">
+            <li><span class="mono muted">01</span>Web dashboard on any browser</li>
+            <li><span class="mono muted">02</span>Windows desktop app</li>
+            <li><span class="mono muted">03</span>Phones and tablets, same login</li>
+          </ul>
+        </div>
+        <div class="phone-frame reveal">
+          <button class="shot shot--phone" data-full="images/meri-fruits/phone-tracking.jpg" aria-label="View Tracking on a phone full size">
+            <img src="images/meri-fruits/phone-tracking.jpg" width="1170" height="2532" loading="lazy"
+                 alt="Meri Fruits Tracking on a phone: paid and still to come, and outstanding money by market.">
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRINCIPLES ============ -->
+    <section class="section section--dark m-principles" id="principles">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <p class="mono muted"><span class="dot"></span>Built to handle real money</p>
+            <h2 class="display display--lg">Rules it<br>won't break.</h2>
+          </div>
+          <p class="subheading">
+            You settle real money with real suppliers off these numbers. A figure that's quietly wrong is worse than a gap you can see,
+            so Meri Fruits is built around a few firm rules.
+          </p>
+        </div>
+
+        <div class="rules">
+          <div class="rule reveal"><span class="mono">01</span><h3>No figure is invented</h3><p>Where a report doesn't carry a number, Meri Fruits asks for it once or shows the gap. It never fills it with a default.</p></div>
+          <div class="rule reveal"><span class="mono">02</span><h3>Checked against the market</h3><p>Outstanding money is held up against the market's own Summary of Deliveries, line by line.</p></div>
+          <div class="rule reveal"><span class="mono">03</span><h3>Doubt goes to a person</h3><p>A payment it can't place with certainty is listed for you to decide. Every decision is kept and can be undone.</p></div>
+          <div class="rule reveal"><span class="mono">04</span><h3>Every flag shows its numbers</h3><p>Nothing is called fraud. A high deduction is a question with the figures attached, not an accusation.</p></div>
+          <div class="rule reveal"><span class="mono">05</span><h3>The AI never does the maths</h3><p>Totals are calculated by code. The assistant only explains them and can't change a single record.</p></div>
+          <div class="rule reveal"><span class="mono">06</span><h3>Access is controlled</h3><p>Invite-only sign-in, encrypted portal passwords, and staff and admins see only what they're allowed to.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="cta m-cta reveal">
+          <div>
+            <span class="tag">See it with your own reports</span>
+            <h2 class="display display--lg" style="margin-top:24px">Run your book<br>on Meri Fruits.</h2>
+            <p class="subheading" style="margin-top:24px;max-width:460px">
+              Meri Fruits runs on the Meri Agents platform, alongside any other apps your business uses.
+              We'll walk you through it using reports in the format your agents already send.
+            </p>
+          </div>
+          <div class="m-cta__side">
+            <ul class="cta__steps">
+              <li><span class="mono muted">01</span>Book a 30-minute demo</li>
+              <li><span class="mono muted">02</span>We connect your market portal and set it up around your book</li>
+              <li><span class="mono muted">03</span>Tomorrow at 08:00, your reports pull themselves</li>
+            </ul>
+            <a href="index.html#contact" class="btn btn--dark" style="align-self:flex-start">Request a demo <span class="arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="index.html" class="logo">
+            <img class="logo__mark" src="images/logo-mark.svg" alt="" width="42" height="24">
+            <span><b>Meri</b><i>.Software</i></span>
+          </a>
+          <p class="footer__blurb">Meri Fruits is an AgriTech app by Meri.Software, running on the Meri Agents platform.</p>
+        </div>
+        <div>
+          <h5>Meri Fruits</h5>
+          <ul>
+            <li><a href="#how">How it works</a></li>
+            <li><a href="#modules">Modules</a></li>
+            <li><a href="#principles">Principles</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Meri.Software</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#agents">Meri Agents platform</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="terms.html">Terms of Use</a></li>
+            <li><a href="privacy.html">Privacy Notice</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Say hello</h5>
+          <ul>
+            <li><a href="mailto:VisserMeridian@outlook.com">VisserMeridian@outlook.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="display footer__word" aria-hidden="true">Meri Fruits</div>
+
+      <div class="footer__bottom">
+        <span class="mono">© <span id="year">2026</span> Meri Software (Pty) Ltd · Reg. 2026/640209/07</span>
+        <span class="mono"><a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Full-size screenshot viewer -->
+  <dialog class="lightbox" id="lightbox" aria-label="Screenshot, full size">
+    <button class="lightbox__close" aria-label="Close">×</button>
+    <img alt="">
+  </dialog>
+
+  <script src="js/main.js"></script>
+  <script src="js/meri-fruits.js"></script>
+</body>
+</html>

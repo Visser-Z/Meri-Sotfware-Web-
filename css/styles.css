@@ -509,7 +509,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .phone .agent__avatar { width: 40px; height: 40px; }
 .phone .agent .status { grid-column: 2; justify-self: start; }
 
-/* ---------- Inside MURR showcase ---------- */
+/* ---------- Inside Meri Fruits showcase ---------- */
 
 .showcase { margin-top: var(--spacing-16); }
 .showcase__head {
@@ -608,7 +608,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   flex-wrap: wrap;
   margin-top: var(--spacing-24);
 }
-/* Long screens show their top part; the full screen is on the MURR page */
+/* Long screens show their top part; the full screen is on the Meri Fruits page */
 .showcase__panel .showcase__shot { max-height: 620px; cursor: pointer; }
 .showcase__panel .showcase__shot--narrow { max-width: 760px; margin: 0 auto; }
 .showcase__panel .showcase__shot img { object-fit: cover; object-position: top; }
