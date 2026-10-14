@@ -29,6 +29,11 @@
       },
       {
         "@type": "Question",
+        "name": "What is the free money owed check?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Send us last month's bank statement and invoice list, and we run them through the Reconciler. You get back a report of what's been paid, what's still owed and which payments couldn't be matched, and we walk you through it on a short call. It's free and there's no obligation to sign up." }
+      },
+      {
+        "@type": "Question",
         "name": "How much does Meri.Conquer cost?",
         "acceptedAnswer": { "@type": "Answer", "text": "Setup is R5,000 once off. After that you pay a monthly fee based on how much work the employees do, meaning the number of invoices and bank lines they handle. You get a fixed quote on the intro call." }
       },
@@ -82,7 +87,7 @@
         <a href="#faq">FAQ</a>
       </nav>
 
-      <a href="index.html?interest=conquer#contact" class="cq-btn cq-btn--primary cq-top__cta">Book an intro</a>
+      <a href="#free-check" class="cq-btn cq-btn--accent cq-top__cta">Free money owed check</a>
 
       <button class="nav__toggle cq-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
         <span></span>
@@ -95,7 +100,7 @@
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
       <a href="index.html">Meri.Software home</a>
-      <a href="index.html?interest=conquer#contact" class="cq-btn cq-btn--primary">Book an intro</a>
+      <a href="#free-check" class="cq-btn cq-btn--accent">Free money owed check</a>
     </div>
   </header>
 
@@ -111,7 +116,7 @@
           <b>The Credit Controller</b> politely chases only the ones that are really unpaid. You approve, and the money comes in.
         </p>
         <div class="cq-actions">
-          <a href="index.html?interest=conquer#contact" class="cq-btn cq-btn--primary">Hire the team <span class="cq-arrow">→</span></a>
+          <a href="#free-check" class="cq-btn cq-btn--primary">Get a free money owed check <span class="cq-arrow">→</span></a>
           <a href="#how" class="cq-btn cq-btn--secondary">See how it works</a>
         </div>
         <p class="cq-anchor"><b>R5,000</b> setup, then a monthly fee based on volume. <span>Now taking on early access businesses.</span></p>
@@ -538,7 +543,7 @@
                 <li>One morning message with both reports</li>
                 <li>A dashboard on the Meri Agents platform</li>
               </ul>
-              <a href="index.html?interest=conquer#contact" class="cq-btn cq-btn--primary">Hire the team <span class="cq-arrow">→</span></a>
+              <a href="#free-check" class="cq-btn cq-btn--primary">Start with a free check <span class="cq-arrow">→</span></a>
             </div>
           </article>
 
@@ -574,6 +579,10 @@
             <p>Remind them early and consistently, starting before the due date, and make paying easy by attaching the invoice and your banking details. The Credit Controller does exactly this on a schedule you set, and only for invoices the Reconciler has confirmed are unpaid.</p>
           </details>
           <details>
+            <summary>What is the free money owed check?</summary>
+            <p>Send us last month's bank statement and invoice list, and we run them through the Reconciler. You get back a report of what's been paid, what's still owed and which payments couldn't be matched, and we walk you through it on a short call. It's free and there's no obligation to sign up.</p>
+          </details>
+          <details>
             <summary>How much does Meri.Conquer cost?</summary>
             <p>Setup is R5,000 once off. After that you pay a monthly fee based on how much work the employees do, meaning the number of invoices and bank lines they handle. You get a fixed quote on the intro call.</p>
           </details>
@@ -601,24 +610,123 @@
       </div>
     </section>
 
-    <!-- ============ CTA ============ -->
-    <section class="cq-section">
+    <!-- ============ FREE MONEY OWED CHECK ============ -->
+    <section class="cq-section" id="free-check">
       <div class="cq-wrap">
-        <div class="cq-cta reveal">
-          <div>
-            <p class="cq-eyebrow cq-eyebrow--light"><span aria-hidden="true"></span>See it on your own numbers</p>
-            <h2 class="cq-h2">Hire your credit control team.</h2>
+        <div class="cq-check">
+          <div class="cq-check__intro">
+            <p class="cq-eyebrow cq-eyebrow--light"><span aria-hidden="true"></span>Free · No obligation · No card</p>
+            <h2 class="cq-h2">Find out who<br>really owes you.</h2>
             <p class="cq-head__text" style="margin-top:16px">
-              Meri.Conquer runs on Meri Agents, the all in one dashboard, alongside Meri Fruits and any custom apps your business uses.
+              Send us last month's bank statement and invoice list. We'll run them through the Reconciler and send you back
+              exactly who has paid, who hasn't, and how much is sitting out there. Free, whether you sign up or not.
             </p>
-          </div>
-          <div class="cq-cta__side">
+
             <ol class="cq-cta__steps">
-              <li><span>01</span>Book a 30 minute intro call</li>
-              <li><span>02</span>Send last month's bank statement and invoice list</li>
-              <li><span>03</span>See every payment matched, and who still owes you</li>
+              <li><span>01</span>Fill in this form. It takes a minute.</li>
+              <li><span>02</span>We reply within 24 hours with a secure link to send your statement and invoice list.</li>
+              <li><span>03</span>You get your money owed report, and we walk you through it on a short call.</li>
             </ol>
-            <a href="index.html?interest=conquer#contact" class="cq-btn cq-btn--accent">Book an intro <span class="cq-arrow">→</span></a>
+
+            <div class="cq-check__get">
+              <p class="cq-card__title">Your report shows</p>
+              <ul class="cq-ticks cq-ticks--dark">
+                <li>What's been paid and what's still owed, in rand</li>
+                <li>Every unpaid invoice and how many days late it is</li>
+                <li>Payments that couldn't be matched to an invoice</li>
+                <li>What the Credit Controller would send, and when</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Requests are delivered by Formspree (same form as the homepage intro call) -->
+          <form class="cq-form" id="intro-form" action="https://formspree.io/f/xkjovpky" method="POST" novalidate>
+            <input type="hidden" name="_subject" value="Free money owed check request, Meri.Conquer">
+            <input type="hidden" name="interest" value="Meri.Conquer free money owed check">
+            <input type="text" name="_gotcha" class="cq-form__hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <!-- filled from the ad link's utm_ parameters by conquer.js -->
+            <input type="hidden" name="utm_source" data-utm>
+            <input type="hidden" name="utm_medium" data-utm>
+            <input type="hidden" name="utm_campaign" data-utm>
+            <input type="hidden" name="utm_content" data-utm>
+
+            <p class="cq-form__title">Request your free check</p>
+
+            <div class="cq-form__row">
+              <div class="field">
+                <label for="c-name">Your name *</label>
+                <input id="c-name" name="name" type="text" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label for="c-company">Business name *</label>
+                <input id="c-company" name="company" type="text" autocomplete="organization" required>
+              </div>
+            </div>
+
+            <div class="cq-form__row">
+              <div class="field">
+                <label for="c-email">Email *</label>
+                <input id="c-email" name="email" type="email" autocomplete="email" required>
+              </div>
+              <div class="field">
+                <label for="c-phone">WhatsApp number *</label>
+                <input id="c-phone" name="phone" type="tel" autocomplete="tel" placeholder="+27 ..." required>
+              </div>
+            </div>
+
+            <div class="cq-form__row">
+              <div class="field">
+                <label for="c-volume">Invoices you send a month</label>
+                <select id="c-volume" name="invoices_per_month">
+                  <option value="Not sure">Not sure</option>
+                  <option value="Under 50">Under 50</option>
+                  <option value="50 to 200">50 to 200</option>
+                  <option value="200 to 500">200 to 500</option>
+                  <option value="Over 500">Over 500</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="c-bank">Your bank</label>
+                <select id="c-bank" name="bank">
+                  <option value="Not said">Choose one</option>
+                  <option>FNB</option>
+                  <option>Absa</option>
+                  <option>Standard Bank</option>
+                  <option>Nedbank</option>
+                  <option>Capitec</option>
+                  <option>Investec</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="c-books">Where your invoices live</label>
+              <select id="c-books" name="invoices_in">
+                <option value="Not said">Choose one</option>
+                <option>Excel or Google Sheets</option>
+                <option>Xero</option>
+                <option>Sage or Pastel</option>
+                <option>Another system</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label class="cq-consent" for="c-consent">
+                <input id="c-consent" name="consent" type="checkbox" value="Agreed to Terms of Use and Privacy Notice" required>
+                <span>I agree to the <a href="terms.html" target="_blank">Terms of Use</a> and <a href="privacy.html" target="_blank">Privacy Notice</a>, and consent to Meri.Software contacting me about this check. *</span>
+              </label>
+            </div>
+
+            <button type="submit" class="cq-btn cq-btn--accent cq-form__submit">Get my free check <span class="cq-arrow">→</span></button>
+            <p class="cq-form__fine">Your statement is used only to run your check. It's never shared, and it's deleted afterwards if you don't go ahead.</p>
+            <p class="form__status cq-form__status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+
+          <div class="cq-form cq-form--done" id="form-success" hidden>
+            <span class="cq-pill cq-pill--accent">Request received</span>
+            <p class="cq-form__title">Thanks. Your check is on its way.</p>
+            <p>We'll reply within 24 hours with a secure link to send last month's bank statement and invoice list.</p>
           </div>
         </div>
       </div>
