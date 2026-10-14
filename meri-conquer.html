@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meri.Conquer · Automated credit control and bank reconciliation</title>
+  <meta name="description" content="Meri.Conquer gives South African businesses two artificial employees. The Reconciler matches every bank payment to its invoice. The Credit Controller sends polite payment reminders for the invoices that are really unpaid. You approve, and get paid.">
+  <meta property="og:title" content="Meri.Conquer · Get paid. Stop chasing.">
+  <meta property="og:description" content="Your credit control team: one artificial employee matches every payment to its invoice, the other politely chases what's really unpaid.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#131211">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/svg+xml" href="images/logo-mark.svg">
+  <link rel="stylesheet" href="css/conquer.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I get customers to pay their invoices on time?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Remind them early and consistently, starting before the due date, and make paying easy by attaching the invoice and your banking details. The Credit Controller does this on a schedule you set, and only for invoices the Reconciler has confirmed are unpaid." }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does Meri.Conquer cost?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Setup is R5,000 once off. After that you pay a monthly fee based on how much work the employees do, meaning the number of invoices and bank lines they handle. You get a fixed quote on the intro call." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need Xero, Sage or Pastel to use it?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Your open invoices can come from an Excel sheet or an export from whatever accounting system you use. Bank statements come in as PDF or CSV." }
+      },
+      {
+        "@type": "Question",
+        "name": "Which banks does the Reconciler work with?",
+        "acceptedAnswer": { "@type": "Answer", "text": "It reads the statements South African banks already give you, as PDF or CSV, including FNB, Absa, Standard Bank, Nedbank and Capitec. We set it up on your own statement format." }
+      },
+      {
+        "@type": "Question",
+        "name": "Will it send reminders to customers who have already paid?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. The Credit Controller only chases invoices the Reconciler has confirmed unpaid that morning. Anything unclear, like a cash deposit with no reference, comes to you instead of triggering a reminder." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this a debt collection service?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. It is your own credit control: reminders go out from your business, in your name, about your own invoices. We do not collect money on your behalf or hand debts over to attorneys." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can it send reminders on WhatsApp?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Reminders go out by email as standard. WhatsApp reminders are available as an add on, sent from your business number using message templates approved by WhatsApp." }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ============ TOP BAR ============ -->
+  <header class="cq-top">
+    <div class="cq-wrap cq-top__inner">
+      <a href="meri-conquer.html" class="cq-brand" aria-label="Meri.Conquer home">
+        <span class="cq-brand__bar" aria-hidden="true"></span>
+        <span>
+          <b>Meri.Conquer</b>
+          <small>by Meri.Software</small>
+        </span>
+      </a>
+
+      <nav class="cq-nav" aria-label="Page sections">
+        <a href="#how">How it works</a>
+        <a href="#team">The team</a>
+        <a href="#chase">The chase</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <a href="index.html?interest=conquer#contact" class="cq-btn cq-btn--primary cq-top__cta">Book an intro</a>
+
+      <button class="nav__toggle cq-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span>
+      </button>
+    </div>
+    <div class="mobile-menu cq-menu" id="mobile-menu">
+      <a href="#how">How it works</a>
+      <a href="#team">The team</a>
+      <a href="#chase">The chase</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="index.html">Meri.Software home</a>
+      <a href="index.html?interest=conquer#contact" class="cq-btn cq-btn--primary">Book an intro</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="cq-wrap cq-hero">
+      <div class="cq-hero__copy">
+        <p class="cq-eyebrow"><span aria-hidden="true"></span>Meri.Conquer · Artificial employees</p>
+        <h1 class="cq-h1">Get paid.<br>Stop chasing.</h1>
+        <p class="cq-lede">
+          Meet your new credit control team. <b>The Reconciler</b> checks every payment on your bank statement against your invoices.
+          <b>The Credit Controller</b> politely chases the ones that are really unpaid. You approve, and the money comes in.
+        </p>
+        <div class="cq-actions">
+          <a href="index.html?interest=conquer#contact" class="cq-btn cq-btn--primary">Hire the team <span class="cq-arrow">→</span></a>
+          <a href="#how" class="cq-btn cq-btn--secondary">See how it works</a>
+        </div>
+        <ul class="cq-facts">
+          <li><b>Any SA bank</b><span>PDF or CSV statements</span></li>
+          <li><b>Your email</b><span>Sent in your name</span></li>
+          <li><b>You approve</b><span>Nothing goes out unseen</span></li>
+        </ul>
+      </div>
+
+      <!-- Live demo: the two employees working through a morning (sample data) -->
+      <div class="cq-card cq-demo reveal" id="ae-demo" aria-label="Demo: the Reconciler and the Credit Controller working through a morning, with sample data">
+        <div class="cq-card__head">
+          <span class="cq-card__title">Credit control · This morning</span>
+          <span class="cq-pill">Sample data</span>
+        </div>
+
+        <div class="cq-demo__staff">
+          <div class="ae-worker" data-worker="rc">
+            <span class="cq-avatar">RC</span>
+            <div><b>The Reconciler</b><span class="ae-worker__state">Waiting for the statement</span></div>
+          </div>
+          <div class="ae-worker" data-worker="cc">
+            <span class="cq-avatar cq-avatar--dark">CC</span>
+            <div><b>The Credit Controller</b><span class="ae-worker__state">Waiting for the Reconciler</span></div>
+          </div>
+        </div>
+
+        <div class="cq-demo__file">
+          <span>FNB statement · 4 payments in</span>
+          <span class="ae-demo__bar"><i></i></span>
+        </div>
+
+        <div class="cq-demo__table" role="table" aria-live="polite">
+          <div class="cq-demo__thead" role="row">
+            <span role="columnheader">Customer</span><span role="columnheader">Amount</span><span role="columnheader">Status</span>
+          </div>
+          <div class="cq-demo__row" data-row role="row">
+            <span class="cq-demo__who" role="cell"><b>Botha Boerdery</b><small>INV 2041</small></span>
+            <span class="cq-num" role="cell">R18,450</span>
+            <span role="cell"><span class="ae-pill" data-final="paid">Open</span></span>
+          </div>
+          <div class="cq-demo__row" data-row role="row">
+            <span class="cq-demo__who" role="cell"><b>Kaap Logistics</b><small>INV 2038</small></span>
+            <span class="cq-num" role="cell">R7,200</span>
+            <span role="cell"><span class="ae-pill" data-final="paid">Open</span></span>
+          </div>
+          <div class="cq-demo__row" data-row role="row">
+            <span class="cq-demo__who" role="cell"><b>Mountain View Farms</b><small>INV 2044</small></span>
+            <span class="cq-num" role="cell">R15,000</span>
+            <span role="cell"><span class="ae-pill" data-final="short">Open</span></span>
+          </div>
+          <div class="cq-demo__row" data-row role="row">
+            <span class="cq-demo__who" role="cell"><b>Swart Bouwerke</b><small>INV 2035</small></span>
+            <span class="cq-num" role="cell">R9,800</span>
+            <span role="cell"><span class="ae-pill" data-final="late">Open</span></span>
+          </div>
+          <div class="cq-demo__row" data-row role="row">
+            <span class="cq-demo__who" role="cell"><b>Cash deposit</b><small>No reference</small></span>
+            <span class="cq-num" role="cell">R3,150</span>
+            <span role="cell"><span class="ae-pill" data-final="ask">Open</span></span>
+          </div>
+        </div>
+
+        <div class="cq-demo__sum">
+          <div class="cq-stat"><span>Matched</span><b class="cq-num" data-count="37650">R0</b></div>
+          <div class="cq-stat cq-stat--warn"><span>Being chased</span><b class="cq-num" data-count="12800">R0</b></div>
+          <div class="cq-stat cq-stat--dark"><span>Needs you</span><b class="cq-num" data-count="1" data-plain>0</b></div>
+        </div>
+        <button class="ae-demo__replay cq-btn cq-btn--ghost" type="button" hidden>Replay ↻</button>
+      </div>
+    </section>
+
+    <!-- ============ FLOW BAND ============ -->
+    <div class="cq-band" aria-hidden="true">
+      <div class="cq-wrap cq-band__inner">
+        <span>Statement in</span><i>→</i><span>Every payment matched</span><i>→</i><span>Unpaid confirmed</span><i>→</i><span>Polite reminder</span><i>→</i><span>Paid</span>
+      </div>
+    </div>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="cq-section" id="how">
+      <div class="cq-wrap">
+        <div class="cq-head">
+          <div>
+            <p class="cq-eyebrow"><span aria-hidden="true"></span>The job nobody wants</p>
+            <h2 class="cq-h2">You did the work.<br>Where's the money?</h2>
+          </div>
+          <p class="cq-head__text">
+            Finding out who has paid means sitting with the bank statement and the invoice list, line by line.
+            Chasing the rest means awkward emails written at night, and the ones you forget are the ones that never pay.
+            Meri.Conquer puts two artificial employees on the job, every morning, without being asked.
+          </p>
+        </div>
+
+        <ol class="cq-steps">
+          <li class="reveal">
+            <span class="cq-steps__num">01</span>
+            <h3>Your statement comes in</h3>
+            <p>Each morning the bank statement arrives as PDF or CSV, from any South African bank. Your open invoices come from Excel or your accounting system.</p>
+          </li>
+          <li class="reveal">
+            <span class="cq-steps__num">02</span>
+            <h3>The Reconciler matches it</h3>
+            <p>Every payment is tied to the invoice it pays, by reference, amount and name. Part payments and mystery deposits are flagged, never guessed.</p>
+          </li>
+          <li class="reveal">
+            <span class="cq-steps__num">03</span>
+            <h3>The Credit Controller chases</h3>
+            <p>Only invoices confirmed unpaid get a reminder. Friendly first, firmer later, in your name and your tone.</p>
+          </li>
+          <li class="cq-steps__you reveal">
+            <span class="cq-steps__num">04</span>
+            <h3>You get one message</h3>
+            <p>What came in, what's overdue, who replied, and the few things that need your decision. That's your whole morning admin.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ THE TEAM ============ -->
+    <section class="cq-section cq-section--paper" id="team">
+      <div class="cq-wrap">
+        <div class="cq-head">
+          <div>
+            <p class="cq-eyebrow"><span aria-hidden="true"></span>Meet the team</p>
+            <h2 class="cq-h2">Two hires.<br>No leave forms.</h2>
+          </div>
+          <p class="cq-head__text">
+            Each artificial employee has one job and does it every day. They work as a pair:
+            the Reconciler works out who has paid, so the Credit Controller only ever chases the ones who haven't.
+          </p>
+        </div>
+
+        <!-- Employee 01: The Reconciler -->
+        <article class="cq-card cq-emp reveal" id="reconciler">
+          <div class="cq-card__head">
+            <span class="cq-card__title">Employee 01 · The Reconciler</span>
+            <span class="cq-pill">Reconciliation</span>
+          </div>
+          <div class="cq-emp__body">
+            <div class="cq-emp__copy">
+              <h3 class="cq-h3">Every payment matched to the invoice it pays.</h3>
+              <p class="cq-emp__lede">The job your bookkeeper does at month end, done every morning instead. It reads the bank statement line by line, so you always know who has really paid.</p>
+              <ul class="cq-list">
+                <li>Reads bank statements as PDF or CSV from FNB, Absa, Standard Bank, Nedbank, Capitec and others</li>
+                <li>Matches on the invoice number in the reference first, then on amount and customer name</li>
+                <li>Handles part payments, one payment covering several invoices, and overpayments</li>
+                <li>A deposit it can't place, like cash with no reference, comes to you with its best guess</li>
+                <li>Every invoice is marked paid, part paid or unpaid, with the bank line that proves it</li>
+              </ul>
+              <dl class="cq-spec">
+                <div><dt>Starts</dt><dd>Every morning, 07:00</dd></div>
+                <div><dt>Reports to</dt><dd>You</dd></div>
+                <div><dt>Hands over to</dt><dd>The Credit Controller</dd></div>
+              </dl>
+            </div>
+
+            <div class="cq-mock" aria-label="The Reconciler's matches, sample data">
+              <div class="cq-mock__bar">Reconciler · This morning</div>
+              <table class="cq-table">
+                <thead><tr><th>Bank line</th><th>Matched to</th><th>Result</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td><span class="cq-mono">BOTHA BOERDERY INV2041</span><small>03 Oct · R18,450.00</small></td>
+                    <td><b>INV 2041</b><small>Reference and amount</small></td>
+                    <td><span class="ae-pill is-paid">Paid</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="cq-mono">KAAP LOGISTICS PTY</span><small>03 Oct · R7,200.00</small></td>
+                    <td><b>INV 2038</b><small>Name and amount</small></td>
+                    <td><span class="ae-pill is-paid">Paid</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="cq-mono">MOUNTAIN VIEW FARMS</span><small>04 Oct · R12,000.00</small></td>
+                    <td><b>INV 2044</b><small>Part payment of R15,000</small></td>
+                    <td><span class="ae-pill is-short">R3,000 short</span></td>
+                  </tr>
+                  <tr class="cq-table__ask">
+                    <td><span class="cq-mono">CASH DEP BRANCH</span><small>04 Oct · R3,150.00</small></td>
+                    <td><b>Needs you</b><small>Best guess: INV 2049</small></td>
+                    <td><span class="ae-pill is-ask">Ask</span></td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="cq-mock__note">Nothing is marked paid on a guess. The cash deposit could belong to two invoices, so it waits for you.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Employee 02: The Credit Controller -->
+        <article class="cq-card cq-emp reveal" id="credit-controller">
+          <div class="cq-card__head">
+            <span class="cq-card__title">Employee 02 · The Credit Controller</span>
+            <span class="cq-pill">Collections</span>
+          </div>
+          <div class="cq-emp__body">
+            <div class="cq-emp__copy">
+              <h3 class="cq-h3">Polite, persistent, and never forgets.</h3>
+              <p class="cq-emp__lede">It works through every unpaid invoice on a schedule you set. It writes like someone from your business, stops when a customer replies, and brings the tricky ones to you.</p>
+              <ul class="cq-list">
+                <li>A friendly heads up before the due date, a reminder on the day, then firmer follow ups</li>
+                <li>Only chases what the Reconciler confirmed unpaid that morning, so nobody who paid gets nagged</li>
+                <li>Sent from your email address, in your name, with the invoice and your banking details attached</li>
+                <li>Reads replies: a promise to pay pauses the chase, a query comes straight to you</li>
+                <li>Hands a customer over to you at the point you choose, with the full history</li>
+              </ul>
+              <dl class="cq-spec">
+                <div><dt>Starts</dt><dd>Every morning, 08:00</dd></div>
+                <div><dt>Reports to</dt><dd>You</dd></div>
+                <div><dt>Works from</dt><dd>The Reconciler's list</dd></div>
+              </dl>
+            </div>
+
+            <div class="cq-mock" aria-label="A reminder written by the Credit Controller, sample data">
+              <div class="cq-mock__bar">Credit Controller · Swart Bouwerke</div>
+              <ol class="cq-trail">
+                <li class="is-done"><span>18 Sep</span>Heads up sent, 3 days before due</li>
+                <li class="is-done"><span>21 Sep</span>Reminder sent on the due date</li>
+                <li class="is-now"><span>Today</span>Follow up drafted, 12 days late</li>
+                <li><span>05 Oct</span>Final notice, after your OK</li>
+              </ol>
+              <div class="cq-mail">
+                <dl class="cq-mail__meta">
+                  <div><dt>To</dt><dd>accounts@swartbouwerke.co.za</dd></div>
+                  <div><dt>Subject</dt><dd>INV 2035: R9,800 now 12 days overdue</dd></div>
+                </dl>
+                <p>Hi Johan,</p>
+                <p>I hope the week is going well. Our records show invoice INV 2035 for R9,800, due on 21 September, is still open. I've attached it again with our banking details.</p>
+                <p>If it's already on its way, please ignore this. If anything on the invoice needs sorting out, just reply and I'll help.</p>
+                <p>Thanks,<br>Lindiwe<br>Accounts, Cape Steel Supplies</p>
+                <div class="cq-mail__foot">
+                  <span class="cq-mono">Attached: INV-2035.pdf</span>
+                  <span class="cq-mail__actions"><span class="cq-btn cq-btn--secondary cq-btn--sm">Edit</span><span class="cq-btn cq-btn--primary cq-btn--sm">Approve and send</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ THE CHASE ============ -->
+    <section class="cq-section" id="chase">
+      <div class="cq-wrap">
+        <div class="cq-head">
+          <div>
+            <p class="cq-eyebrow"><span aria-hidden="true"></span>The chase, step by step</p>
+            <h2 class="cq-h2">Friendly first.<br>Firm when needed.</h2>
+          </div>
+          <p class="cq-head__text">
+            The default schedule below works for most businesses. You can change every step, its timing and its tone,
+            and switch any customer to "ask me first".
+          </p>
+        </div>
+
+        <ol class="cq-chase">
+          <li class="reveal">
+            <span class="cq-chase__when">3 days before</span>
+            <h3>Heads up</h3>
+            <p>"Just a quick note that INV 2047 is due on Friday. Invoice attached for easy reference."</p>
+          </li>
+          <li class="reveal">
+            <span class="cq-chase__when">Due date</span>
+            <h3>Reminder</h3>
+            <p>"INV 2047 is due today. Our banking details are below, with the invoice attached."</p>
+          </li>
+          <li class="cq-chase--warn reveal">
+            <span class="cq-chase__when">7 days late</span>
+            <h3>Follow up</h3>
+            <p>"INV 2047 is now a week overdue. If something's holding it up, reply and we'll sort it out."</p>
+          </li>
+          <li class="cq-chase--alert reveal">
+            <span class="cq-chase__when">14 days late</span>
+            <h3>Final notice</h3>
+            <p>Firmer wording, sent only after you approve it. You choose whether to mention account holds or interest.</p>
+          </li>
+          <li class="cq-chase--you reveal">
+            <span class="cq-chase__when">21 days late</span>
+            <h3>Over to you</h3>
+            <p>The customer lands on your desk with every message, reply and payment, so one phone call settles it.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ MORNING MESSAGE ============ -->
+    <section class="cq-section cq-section--paper">
+      <div class="cq-wrap cq-morning">
+        <div>
+          <p class="cq-eyebrow"><span aria-hidden="true"></span>Your morning, in one message</p>
+          <h2 class="cq-h2">Coffee.<br>Then cash flow.</h2>
+          <p class="cq-head__text" style="margin-top:20px">
+            At 07:30 the team reports to you on your phone. What came in, who's late, who replied,
+            and the one or two decisions only you can make. Approve from the message and get on with your day.
+          </p>
+          <ul class="cq-ticks">
+            <li>By email as standard</li>
+            <li>WhatsApp as an add on</li>
+            <li>Full detail on the Meri Agents dashboard</li>
+          </ul>
+        </div>
+
+        <div class="cq-phone reveal" aria-label="Morning summary on a phone, sample data">
+          <div class="cq-phone__screen">
+            <div class="cq-phone__top">
+              <span class="cq-avatar cq-avatar--dark">MC</span>
+              <div><b>Meri.Conquer</b><span>Credit control team</span></div>
+            </div>
+            <div class="cq-bubble">
+              <p><b>Good morning, Pieter.</b></p>
+              <p class="cq-bubble__line cq-bubble__line--ok"><b>R37,650</b> came in yesterday from 3 customers. All matched.</p>
+              <p class="cq-bubble__line cq-bubble__line--warn"><b>2 invoices</b> are overdue (R12,800). Follow ups are ready for your OK.</p>
+              <p class="cq-bubble__line">Ocean Fresh replied: paying Friday. Chase paused until then.</p>
+              <p class="cq-bubble__line cq-bubble__line--ask">A cash deposit of <b>R3,150</b> has no reference. Is it Lekker Eats?</p>
+              <span class="cq-bubble__time">07:30</span>
+            </div>
+            <div class="cq-quick">
+              <span>Approve follow ups</span>
+              <span>Yes, Lekker Eats</span>
+              <span>Show me</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WORKS WITH ============ -->
+    <section class="cq-section cq-section--tight">
+      <div class="cq-wrap">
+        <div class="cq-works">
+          <div class="cq-card">
+            <div class="cq-card__head"><span class="cq-card__title">Bank statements</span></div>
+            <div class="cq-chips"><span>FNB</span><span>Absa</span><span>Standard Bank</span><span>Nedbank</span><span>Capitec</span><span>Investec</span><span>Any PDF or CSV</span></div>
+          </div>
+          <div class="cq-card">
+            <div class="cq-card__head"><span class="cq-card__title">Invoices from</span></div>
+            <div class="cq-chips"><span>Excel</span><span>Google Sheets</span><span>Xero export</span><span>Sage export</span><span>Pastel export</span><span>Your own system</span></div>
+          </div>
+          <div class="cq-card">
+            <div class="cq-card__head"><span class="cq-card__title">Reminders by</span></div>
+            <div class="cq-chips"><span>Your email address</span><span>WhatsApp add on</span></div>
+          </div>
+        </div>
+        <p class="cq-note">No new accounting software to learn. The team works with what you already have.</p>
+      </div>
+    </section>
+
+    <!-- ============ RULES ============ -->
+    <section class="cq-section cq-section--dark" id="rules">
+      <div class="cq-wrap">
+        <div class="cq-head">
+          <div>
+            <p class="cq-eyebrow cq-eyebrow--light"><span aria-hidden="true"></span>Built for your customer relationships</p>
+            <h2 class="cq-h2">Rules they won't break.</h2>
+          </div>
+          <p class="cq-head__text">
+            A reminder sent to a customer who already paid costs you more than the invoice. So the team works to a few firm rules.
+          </p>
+        </div>
+
+        <div class="cq-rules">
+          <div class="reveal"><span>01</span><h3>Never chases a paid invoice</h3><p>The Credit Controller only works from the Reconciler's list of invoices confirmed unpaid that same morning.</p></div>
+          <div class="reveal"><span>02</span><h3>You approve first</h3><p>Every message waits for your OK while you get to know the team. Switch customers to automatic when you're ready.</p></div>
+          <div class="reveal"><span>03</span><h3>No guessing</h3><p>A payment it can't place with certainty is put to you with its best guess. It never marks an invoice paid on a hunch.</p></div>
+          <div class="reveal"><span>04</span><h3>Polite by default</h3><p>Messages read like they came from a person at your business. Firmer wording only goes out when you say so.</p></div>
+          <div class="reveal"><span>05</span><h3>Your customers stay yours</h3><p>Their details are used only to manage your own accounts with them. Never shared, never marketed to, handled in line with POPIA.</p></div>
+          <div class="reveal"><span>06</span><h3>Every action logged</h3><p>Every match, message and reply is kept, so you can see exactly what was sent, when, and why.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRICING ============ -->
+    <section class="cq-section" id="pricing">
+      <div class="cq-wrap">
+        <div class="cq-head">
+          <div>
+            <p class="cq-eyebrow"><span aria-hidden="true"></span>Pricing</p>
+            <h2 class="cq-h2">Priced like staff.<br>Paid like software.</h2>
+          </div>
+          <p class="cq-head__text">
+            One setup fee to build the team around your own statements and invoices.
+            After that you pay for the work they actually do each month. No salary, leave or overtime.
+          </p>
+        </div>
+
+        <div class="cq-price">
+          <div class="cq-price__fee">
+            <span class="cq-card__title">Setup</span>
+            <b class="cq-num">R5,000</b>
+            <p>Once off. We set the team up on your bank's statement format, your invoice list and your reminder wording.</p>
+          </div>
+          <div class="cq-price__fee">
+            <span class="cq-card__title">Monthly</span>
+            <b>By volume</b>
+            <p>Based on how much work they do: the invoices and bank lines they handle each month. A quiet month costs less.</p>
+          </div>
+        </div>
+
+        <div class="cq-plans">
+          <article class="cq-card cq-plan reveal">
+            <div class="cq-card__head"><span class="cq-card__title">Employee 01</span><span class="cq-pill">Reconciliation</span></div>
+            <div class="cq-plan__body">
+              <h3 class="cq-h3">The Reconciler</h3>
+              <p>Know who has paid, every morning, without opening a spreadsheet.</p>
+              <ul class="cq-ticks">
+                <li>Daily bank statement matching</li>
+                <li>Part and combined payments handled</li>
+                <li>Unclear deposits put to you</li>
+                <li>Paid, part paid and unpaid list</li>
+              </ul>
+              <a href="index.html?interest=conquer#contact" class="cq-btn cq-btn--secondary">Ask about the Reconciler</a>
+            </div>
+          </article>
+
+          <article class="cq-card cq-plan cq-plan--best reveal">
+            <div class="cq-card__head"><span class="cq-card__title">Both employees</span><span class="cq-pill cq-pill--accent">Recommended</span></div>
+            <div class="cq-plan__body">
+              <h3 class="cq-h3">The full Meri.Conquer team</h3>
+              <p>The Reconciler and the Credit Controller working together, so every unpaid invoice is found and followed up.</p>
+              <ul class="cq-ticks">
+                <li>Everything both employees do</li>
+                <li>Chasing based on real, matched payments</li>
+                <li>One morning message with both reports</li>
+                <li>A dashboard on the Meri Agents platform</li>
+              </ul>
+              <a href="index.html?interest=conquer#contact" class="cq-btn cq-btn--primary">Hire the team <span class="cq-arrow">→</span></a>
+            </div>
+          </article>
+
+          <article class="cq-card cq-plan reveal">
+            <div class="cq-card__head"><span class="cq-card__title">Employee 02</span><span class="cq-pill">Collections</span></div>
+            <div class="cq-plan__body">
+              <h3 class="cq-h3">The Credit Controller</h3>
+              <p>Every unpaid invoice followed up on time, in your name, without the awkward emails.</p>
+              <ul class="cq-ticks">
+                <li>Reminder schedule you control</li>
+                <li>Sent from your email address</li>
+                <li>Replies read, promises tracked</li>
+                <li>Handover to you with full history</li>
+              </ul>
+              <a href="index.html?interest=conquer#contact" class="cq-btn cq-btn--secondary">Ask about the Credit Controller</a>
+            </div>
+          </article>
+        </div>
+        <p class="cq-note">You get a fixed monthly quote on the intro call, based on your invoice and bank line volumes.</p>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="cq-section cq-section--paper" id="faq">
+      <div class="cq-wrap cq-faq">
+        <div>
+          <p class="cq-eyebrow"><span aria-hidden="true"></span>Questions</p>
+          <h2 class="cq-h2">Good questions.</h2>
+        </div>
+        <div class="cq-faq__list">
+          <details>
+            <summary>How do I get customers to pay their invoices on time?</summary>
+            <p>Remind them early and consistently, starting before the due date, and make paying easy by attaching the invoice and your banking details. The Credit Controller does exactly this on a schedule you set, and only for invoices the Reconciler has confirmed are unpaid.</p>
+          </details>
+          <details>
+            <summary>How much does Meri.Conquer cost?</summary>
+            <p>Setup is R5,000 once off. After that you pay a monthly fee based on how much work the employees do, meaning the number of invoices and bank lines they handle. You get a fixed quote on the intro call.</p>
+          </details>
+          <details>
+            <summary>Do I need Xero, Sage or Pastel to use it?</summary>
+            <p>No. Your open invoices can come from an Excel sheet or an export from whatever accounting system you use. Bank statements come in as PDF or CSV.</p>
+          </details>
+          <details>
+            <summary>Which banks does the Reconciler work with?</summary>
+            <p>It reads the statements South African banks already give you, as PDF or CSV, including FNB, Absa, Standard Bank, Nedbank and Capitec. We set it up on your own statement format.</p>
+          </details>
+          <details>
+            <summary>Will it send reminders to customers who have already paid?</summary>
+            <p>No. The Credit Controller only chases invoices the Reconciler has confirmed unpaid that morning. Anything unclear, like a cash deposit with no reference, comes to you instead of triggering a reminder.</p>
+          </details>
+          <details>
+            <summary>Is this a debt collection service?</summary>
+            <p>No. It's your own credit control: reminders go out from your business, in your name, about your own invoices. We don't collect money on your behalf or hand debts over to attorneys.</p>
+          </details>
+          <details>
+            <summary>Can it send reminders on WhatsApp?</summary>
+            <p>Reminders go out by email as standard. WhatsApp reminders are available as an add on, sent from your business number using message templates approved by WhatsApp.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="cq-section">
+      <div class="cq-wrap">
+        <div class="cq-cta reveal">
+          <div>
+            <p class="cq-eyebrow cq-eyebrow--light"><span aria-hidden="true"></span>See it on your own numbers</p>
+            <h2 class="cq-h2">Hire your credit control team.</h2>
+            <p class="cq-head__text" style="margin-top:16px">
+              Meri.Conquer runs on the Meri Agents platform, alongside any other apps and agents your business uses.
+            </p>
+          </div>
+          <div class="cq-cta__side">
+            <ol class="cq-cta__steps">
+              <li><span>01</span>Book a 30 minute intro call</li>
+              <li><span>02</span>Send last month's bank statement and invoice list</li>
+              <li><span>03</span>See every payment matched, and who still owes you</li>
+            </ol>
+            <a href="index.html?interest=conquer#contact" class="cq-btn cq-btn--accent">Book an intro <span class="cq-arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="cq-footer">
+    <div class="cq-wrap">
+      <div class="cq-footer__grid">
+        <div>
+          <a href="meri-conquer.html" class="cq-brand cq-brand--light">
+            <span class="cq-brand__bar" aria-hidden="true"></span>
+            <span><b>Meri.Conquer</b><small>by Meri.Software</small></span>
+          </a>
+          <p class="cq-footer__blurb">Artificial employees for credit control, running on the Meri Agents platform.</p>
+        </div>
+        <div>
+          <h5>Meri.Conquer</h5>
+          <ul>
+            <li><a href="#reconciler">The Reconciler</a></li>
+            <li><a href="#credit-controller">The Credit Controller</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Meri.Software</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="meri-fruits.html">Meri Fruits</a></li>
+            <li><a href="index.html#agents">Meri Agents platform</a></li>
+            <li><a href="terms.html">Terms of Use</a></li>
+            <li><a href="privacy.html">Privacy Notice</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Say hello</h5>
+          <ul>
+            <li><a href="mailto:VisserMeridian@outlook.com">VisserMeridian@outlook.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="cq-footer__bottom">
+        <span>© <span id="year">2026</span> Meri Software (Pty) Ltd · Reg. 2026/640209/07</span>
+        <span><a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/conquer.js"></script>
+</body>
+</html>

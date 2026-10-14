@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Meri.Software — Run your business on AI agents</title>
-  <meta name="description" content="Meri Agents is the all-in-one platform that automates your business with AI agents: one dashboard for Meri Fruits, procurement, live dashboards and custom apps built around how you work.">
+  <meta name="description" content="Meri Agents is the all-in-one platform that automates your business with AI agents: one dashboard for Meri Fruits, Meri.Conquer artificial employees for credit control and reconciliation, procurement, live dashboards and custom apps built around how you work.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,6 +29,7 @@
         <div class="nav__pill">
           <a href="#agritech">AgriTech</a>
           <a href="meri-fruits.html">Meri Fruits</a>
+          <a href="meri-conquer.html">Meri.Conquer</a>
           <a href="#agents">Platform</a>
           <a href="#bespoke">Custom apps</a>
           <a href="#process">Process</a>
@@ -44,6 +45,7 @@
     <div class="mobile-menu" id="mobile-menu">
       <a href="#agritech">AgriTech</a>
       <a href="meri-fruits.html">Meri Fruits</a>
+      <a href="meri-conquer.html">Meri.Conquer</a>
       <a href="#agents">Platform</a>
       <a href="#bespoke">Custom apps</a>
       <a href="#process">Process</a>
@@ -137,8 +139,8 @@
     <!-- ============ TICKER ============ -->
     <div class="ticker" aria-hidden="true">
       <div class="ticker__track">
-        <div class="ticker__item">Meri Agents <span class="dot"></span> One dashboard <span class="dot"></span> Meri Fruits <span class="dot"></span> Procurement <span class="dot"></span> Live dashboards <span class="dot"></span> Custom apps <span class="dot"></span></div>
-        <div class="ticker__item">Meri Agents <span class="dot"></span> One dashboard <span class="dot"></span> Meri Fruits <span class="dot"></span> Procurement <span class="dot"></span> Live dashboards <span class="dot"></span> Custom apps <span class="dot"></span></div>
+        <div class="ticker__item">Meri Agents <span class="dot"></span> One dashboard <span class="dot"></span> Meri Fruits <span class="dot"></span> Meri.Conquer <span class="dot"></span> Procurement <span class="dot"></span> Live dashboards <span class="dot"></span> Custom apps <span class="dot"></span></div>
+        <div class="ticker__item">Meri Agents <span class="dot"></span> One dashboard <span class="dot"></span> Meri Fruits <span class="dot"></span> Meri.Conquer <span class="dot"></span> Procurement <span class="dot"></span> Live dashboards <span class="dot"></span> Custom apps <span class="dot"></span></div>
       </div>
     </div>
 
@@ -464,7 +466,8 @@
               <button class="platform__nav" data-view="procurement">Procurement</button>
               <button class="platform__nav" data-view="dashboards">Live dashboards</button>
               <button class="platform__nav" data-view="inbox">Inbox agent</button>
-              <button class="platform__nav" data-view="finance">Finance agent</button>
+              <button class="platform__nav" data-view="reconciler">The Reconciler</button>
+              <button class="platform__nav" data-view="credit">The Credit Controller</button>
               <button class="platform__nav platform__nav--add" data-view="custom">+ Your custom app</button>
             </aside>
 
@@ -479,7 +482,7 @@
                   <span class="status">All systems running</span>
                 </div>
                 <div class="pkpis">
-                  <div><b>6</b><span>Agents running</span></div>
+                  <div><b>8</b><span>Agents running</span></div>
                   <div><b>128</b><span>Tasks done today</span></div>
                   <div><b>3</b><span>Need your OK</span></div>
                   <div><b>5</b><span>Apps connected</span></div>
@@ -510,16 +513,17 @@
                     <span class="papp__meta">Email &amp; follow-ups</span>
                     <span class="papp__status papp__status--wait">12 drafts to review</span>
                   </button>
-                  <button class="papp" data-view="finance">
-                    <span class="papp__icon papp__icon--mint">FI</span>
-                    <span class="papp__name">Finance agent</span>
-                    <span class="papp__meta">Invoices &amp; recons</span>
-                    <span class="papp__status papp__status--wait">1 invoice to approve</span>
+                  <button class="papp" data-view="reconciler">
+                    <span class="papp__icon papp__icon--mint">RC</span>
+                    <span class="papp__name">The Reconciler</span>
+                    <span class="papp__meta">Meri.Conquer</span>
+                    <span class="papp__status">R37,650 matched</span>
                   </button>
-                  <button class="papp papp--add" data-view="custom">
-                    <span class="papp__icon">+</span>
-                    <span class="papp__name">Your custom app</span>
-                    <span class="papp__meta">Built for your business</span>
+                  <button class="papp" data-view="credit">
+                    <span class="papp__icon papp__icon--yellow">CC</span>
+                    <span class="papp__name">The Credit Controller</span>
+                    <span class="papp__meta">Meri.Conquer</span>
+                    <span class="papp__status papp__status--wait">2 follow ups to approve</span>
                   </button>
                 </div>
               </section>
@@ -584,18 +588,34 @@
                 <a href="#contact" class="btn btn--dark pview__cta">Talk to us about an inbox agent <span class="arrow">→</span></a>
               </section>
 
-              <!-- FINANCE -->
-              <section class="pview" data-view="finance" aria-label="Finance agent" hidden>
+              <!-- THE RECONCILER -->
+              <section class="pview" data-view="reconciler" aria-label="The Reconciler" hidden>
                 <div class="pview__head">
-                  <div><p class="mono muted">Agents / Finance</p><h3>Invoices, payments and reconciliations</h3></div>
-                  <span class="tag">Built to order</span>
+                  <div><p class="mono muted">Meri.Conquer / The Reconciler</p><h3>Every payment matched to the invoice it pays</h3></div>
+                  <span class="tag">Early access</span>
                 </div>
                 <ul class="pfeed">
-                  <li><span class="pfeed__who">Finance agent</span><span>Captured 23 supplier invoices from email and PDFs</span><span class="status">Done</span></li>
-                  <li><span class="pfeed__who">Recon agent</span><span>Matched last month's bank lines to invoices</span><span class="status">Done</span></li>
-                  <li><span class="pfeed__who">Approvals</span><span>1 invoice above your limit waiting for sign-off</span><span class="status status--idle">Needs you</span></li>
+                  <li><span class="pfeed__who">07:00</span><span>Read this morning's FNB statement: 4 payments in</span><span class="status">Done</span></li>
+                  <li><span class="pfeed__who">Matched</span><span>Botha Boerdery and Kaap Logistics paid in full, R25,650</span><span class="status">Paid</span></li>
+                  <li><span class="pfeed__who">Part paid</span><span>Mountain View Farms paid R12,000 of R15,000. Balance handed to the Credit Controller</span><span class="status status--busy">R3,000 short</span></li>
+                  <li><span class="pfeed__who">Needs you</span><span>Cash deposit of R3,150 with no reference. Best guess: Lekker Eats</span><span class="status status--idle">Ask</span></li>
                 </ul>
-                <a href="#contact" class="btn btn--dark pview__cta">Talk to us about a finance agent <span class="arrow">→</span></a>
+                <a href="meri-conquer.html#reconciler" class="btn btn--dark pview__cta">Meet the Reconciler <span class="arrow">→</span></a>
+              </section>
+
+              <!-- THE CREDIT CONTROLLER -->
+              <section class="pview" data-view="credit" aria-label="The Credit Controller" hidden>
+                <div class="pview__head">
+                  <div><p class="mono muted">Meri.Conquer / The Credit Controller</p><h3>Unpaid invoices, followed up politely</h3></div>
+                  <span class="tag">Early access</span>
+                </div>
+                <ul class="pfeed">
+                  <li><span class="pfeed__who">Follow up</span><span>Swart Bouwerke, INV 2035, R9,800, 12 days late. Drafted in your tone</span><span class="status status--idle">Needs you</span></li>
+                  <li><span class="pfeed__who">Balance</span><span>Mountain View Farms, R3,000 still owing on INV 2044</span><span class="status status--idle">Needs you</span></li>
+                  <li><span class="pfeed__who">Reply read</span><span>Ocean Fresh promised to pay on Friday. Chase paused until then</span><span class="status">Paused</span></li>
+                  <li><span class="pfeed__who">Heads up</span><span>3 invoices due on Friday got a friendly reminder</span><span class="status">Sent</span></li>
+                </ul>
+                <a href="meri-conquer.html#credit-controller" class="btn btn--dark pview__cta">Meet the Credit Controller <span class="arrow">→</span></a>
               </section>
 
               <!-- CUSTOM -->
@@ -663,7 +683,13 @@
             <p>Our flagship app for fresh-produce consignment. It pulls the market's reports every morning, matches every payment, tracks stock from your delivery notes and plans next week's dispatch.</p>
             <span class="btn btn--text" style="margin-top:auto">Explore Meri Fruits <span class="arrow">→</span></span>
           </a>
-          <article class="card span-5 reveal">
+          <a class="card span-5 app-card app-card--light reveal" href="meri-conquer.html">
+            <div class="bespoke__head"><span class="tag" style="background:var(--color-voltage-yellow)">Early access</span><span class="bespoke__num">Meri.Conquer</span></div>
+            <h3>Meri.Conquer</h3>
+            <p>Your credit control team. The Reconciler matches every bank payment to its invoice. The Credit Controller politely chases what's really unpaid. You approve, and get paid.</p>
+            <span class="btn btn--text" style="margin-top:auto">Meet the team <span class="arrow">→</span></span>
+          </a>
+          <article class="card span-4 reveal">
             <div class="bespoke__head"><span class="tag">Built to order</span><span class="bespoke__num">Operations</span></div>
             <h3>Procurement</h3>
             <p>What to buy, how much, and where it goes, worked out from what actually sold and what's already on hand.</p>
@@ -675,10 +701,10 @@
           </article>
           <article class="card span-4 reveal">
             <div class="bespoke__head"><span class="tag">Built to order</span><span class="bespoke__num">Admin</span></div>
-            <h3>Inbox &amp; finance agents</h3>
-            <p>Email triage, follow-ups, invoice capture and reconciliations, done by agents and approved by you.</p>
+            <h3>Inbox agent</h3>
+            <p>Email triage, follow ups and invoice capture, done by agents and approved by you.</p>
           </article>
-          <article class="card span-4 reveal">
+          <article class="card span-12 reveal">
             <div class="bespoke__head"><span class="tag tag--ghost">Yours</span><span class="bespoke__num">Custom</span></div>
             <h3>Your business app</h3>
             <p>Quotes, jobs, field work, compliance: whatever your business runs on, built as an app on the platform.</p>
@@ -778,6 +804,7 @@
             <div class="chips">
               <label class="chip"><input type="checkbox" name="interest" value="AgriTech platform"><span>AgriTech</span></label>
               <label class="chip"><input type="checkbox" name="interest" value="Meri Fruits"><span>Meri Fruits</span></label>
+              <label class="chip"><input type="checkbox" name="interest" value="Meri.Conquer (Reconciler + Credit Controller)" data-key="conquer"><span>Meri.Conquer</span></label>
               <label class="chip"><input type="checkbox" name="interest" value="Meri Agents platform"><span>Meri Agents platform</span></label>
               <label class="chip"><input type="checkbox" name="interest" value="Custom app"><span>Custom app</span></label>
               <label class="chip"><input type="checkbox" name="interest" value="Not sure yet"><span>Not sure yet</span></label>
@@ -838,6 +865,7 @@
           <ul>
             <li><a href="#agritech">AgriTech</a></li>
             <li><a href="meri-fruits.html">Meri Fruits</a></li>
+            <li><a href="meri-conquer.html">Meri.Conquer</a></li>
             <li><a href="#agents">Meri Agents platform</a></li>
             <li><a href="#bespoke">Custom apps</a></li>
           </ul>

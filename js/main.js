@@ -59,7 +59,7 @@ const typed = document.getElementById('typed');
 const prompts = [
   'What’s still owed by the market agents?',
   'Build next month’s procurement plan',
-  'Which invoices need my approval?',
+  'Who still owes me money this month?',
   'Summarise this week across all my apps',
 ];
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -151,6 +151,13 @@ if (form) {
   form.querySelectorAll('[required]').forEach((input) =>
     input.addEventListener(input.type === 'checkbox' ? 'change' : 'input', () => setError(input, ''))
   );
+
+  // Links like index.html?interest=credit-control#contact tick the matching interest
+  const interest = new URLSearchParams(window.location.search).get('interest');
+  if (interest) {
+    const chip = form.querySelector(`input[name="interest"][data-key="${CSS.escape(interest)}"]`);
+    if (chip) chip.checked = true;
+  }
 
   form.addEventListener('submit', async (event) => {
     event.preventDefault();

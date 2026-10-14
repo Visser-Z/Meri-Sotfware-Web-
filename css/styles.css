@@ -1050,9 +1050,12 @@ ul { margin: 0; padding: 0; list-style: none; }
   .footer__grid { grid-template-columns: 1fr 1fr; }
 }
 
-@media (max-width: 860px) {
+@media (max-width: 1080px) {
   .nav__pill, .nav__cta { display: none; }
   .nav__toggle { display: grid; }
+}
+
+@media (max-width: 860px) {
   .section__head { grid-template-columns: 1fr; gap: var(--spacing-24); margin-bottom: var(--spacing-40); }
 }
 
