@@ -639,11 +639,13 @@
             </div>
           </div>
 
-          <!-- Requests are delivered by Formspree (same form as the homepage intro call) -->
-          <form class="cq-form" id="intro-form" action="https://formspree.io/f/xkjovpky" method="POST" novalidate>
-            <input type="hidden" name="_subject" value="Free money owed check request, Meri.Conquer">
+          <!-- Requests are delivered by Web3Forms (same access key as the homepage form) -->
+          <form class="cq-form" id="intro-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+            <input type="hidden" name="subject" value="Free money owed check request, Meri.Conquer">
+            <input type="hidden" name="from_name" value="Meri.Conquer page">
             <input type="hidden" name="interest" value="Meri.Conquer free money owed check">
-            <input type="text" name="_gotcha" class="cq-form__hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="checkbox" name="botcheck" class="cq-form__hp" tabindex="-1" autocomplete="off" aria-hidden="true">
             <!-- filled from the ad link's utm_ parameters by conquer.js -->
             <input type="hidden" name="utm_source" data-utm>
             <input type="hidden" name="utm_medium" data-utm>

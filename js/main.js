@@ -110,7 +110,7 @@ showcaseTabs.forEach((tab, index) => {
   });
 });
 
-// Intro call form (posts to Formspree without leaving the page)
+// Enquiry form (posts to Web3Forms without leaving the page)
 const form = document.getElementById('intro-form');
 if (form) {
   const status = document.getElementById('form-status');
@@ -164,7 +164,8 @@ if (form) {
     status.textContent = '';
     if (!validate()) return;
 
-    if (form.action.includes('YOUR_FORM_ID')) {
+    const key = form.querySelector('[name="access_key"]');
+    if (!key || !key.value || key.value === 'YOUR_WEB3FORMS_ACCESS_KEY') {
       status.textContent = 'This form isn’t connected yet. Please email VisserMeridian@outlook.com in the meantime.';
       return;
     }
@@ -182,7 +183,11 @@ if (form) {
         body: data,
         headers: { Accept: 'application/json' },
       });
-      if (!response.ok) throw new Error(`Formspree responded ${response.status}`);
+      // Web3Forms answers with { success: true|false, message }
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok || result.success === false) {
+        throw new Error(result.message || `Form service responded ${response.status}`);
+      }
       form.hidden = true;
       success.hidden = false;
     } catch (error) {

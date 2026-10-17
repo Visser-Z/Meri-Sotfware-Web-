@@ -1,0 +1,140 @@
+/* ==========================================================================
+   Operations automation agency: services, work, industries
+   ========================================================================== */
+
+.section--tight { padding-top: var(--spacing-40); }
+
+/* ---------- What we automate ---------- */
+
+.services { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-16); }
+.service {
+  background: var(--color-graphite);
+  border-radius: var(--radius-cards);
+  padding: var(--spacing-24);
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform .3s ease;
+}
+.service:hover { transform: translateY(-4px); }
+.service:nth-child(2) { background: var(--color-mint-chip); color: var(--color-carbon-black); }
+.service h3 {
+  margin-top: auto;
+  font-size: var(--text-heading-sm);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+.service p { color: var(--color-ash); font-size: var(--text-body-sm); line-height: 1.5; }
+.service:nth-child(2) p { color: var(--color-slate); }
+.service:nth-child(2) .mono { color: var(--color-slate); }
+
+/* ---------- Work ---------- */
+
+.work { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-16); }
+.work-card {
+  background: var(--color-paper-white);
+  border-radius: var(--radius-cards);
+  padding: var(--spacing-24);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-16);
+}
+.work-card h3 {
+  font-size: var(--text-heading-sm);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+.work-card p { color: var(--color-slate); line-height: 1.5; }
+.work-card__tags { display: flex; gap: 8px; flex-wrap: wrap; }
+.work-card__fit { margin-top: auto; padding-top: var(--spacing-16); border-top: 1px solid var(--color-mist-gray); font-size: var(--text-body-sm); }
+.work-card__fit b { color: var(--color-carbon-black); font-weight: var(--font-weight-medium); }
+.work-card--dark { background: var(--color-carbon-black); color: var(--color-paper-white); }
+.work-card--dark p { color: var(--color-ash); }
+.work-card--dark .work-card__fit { border-top-color: var(--color-graphite); }
+.work-card--dark .work-card__fit b { color: var(--color-paper-white); }
+
+.work-card--feature {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: var(--spacing-40);
+  align-items: center;
+  background: var(--color-carbon-black);
+  color: var(--color-paper-white);
+  border-radius: var(--radius-large-cards);
+  padding: var(--spacing-40);
+}
+.work-card--feature h3 { font-size: clamp(28px, 3vw, var(--text-heading)); font-weight: var(--font-weight-w450); text-transform: uppercase; line-height: 1.05; letter-spacing: -0.02em; }
+.work-card--feature p { color: var(--color-ash); }
+.work-card__copy { display: flex; flex-direction: column; gap: var(--spacing-16); align-items: flex-start; }
+.work-card__points { width: 100%; border-top: 1px solid var(--color-graphite); }
+.work-card__points li {
+  display: flex;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-graphite);
+  font-size: var(--text-body-sm);
+}
+.work-card__points li::before {
+  content: "";
+  flex: none;
+  width: 8px;
+  height: 8px;
+  margin-top: 5px;
+  border-radius: 50%;
+  background: var(--color-mint-chip);
+}
+.work-card__shot {
+  position: relative;
+  display: block;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  max-height: 420px;
+  background: #f3f5f9;
+}
+.work-card__shot img { width: 100%; height: auto; display: block; transition: transform .5s ease; }
+.work-card__shot:hover img { transform: scale(1.02); }
+.work-card__shot .tag { position: absolute; top: 12px; right: 12px; }
+
+/* ---------- Industries ---------- */
+
+.industries {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: var(--spacing-40);
+  background: var(--color-paper-white);
+  border-radius: var(--radius-large-cards);
+  padding: var(--spacing-40);
+  align-items: center;
+}
+.industries__lede { margin-top: var(--spacing-16); color: var(--color-slate); line-height: 1.5; max-width: 420px; }
+.industries__list { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.industries__list li {
+  background: var(--color-mist-gray);
+  border-radius: var(--radius-tags);
+  padding: 12px 18px;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-body-sm);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1024px) {
+  .services { grid-template-columns: 1fr 1fr; }
+  .work { grid-template-columns: 1fr; }
+  .work-card--feature { grid-template-columns: 1fr; }
+  .industries { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .services { grid-template-columns: 1fr; }
+  .service { min-height: 0; }
+  .work-card--feature, .industries { padding: var(--spacing-24); border-radius: var(--radius-cards); }
+  .industries__list { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .service, .work-card__shot img { transition: none; }
+  .service:hover { transform: none; }
+}
