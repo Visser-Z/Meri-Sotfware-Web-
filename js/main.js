@@ -166,7 +166,7 @@ if (form) {
 
     const key = form.querySelector('[name="access_key"]');
     if (!key || !key.value || key.value === 'YOUR_WEB3FORMS_ACCESS_KEY') {
-      status.textContent = 'This form isn’t connected yet. Please email VisserMeridian@outlook.com in the meantime.';
+      status.textContent = 'This form isn’t connected yet. Please email visser@meri-ai.com in the meantime.';
       return;
     }
 
@@ -191,7 +191,7 @@ if (form) {
       form.hidden = true;
       success.hidden = false;
     } catch (error) {
-      status.textContent = 'Something went wrong sending your request. Please try again, or email VisserMeridian@outlook.com.';
+      status.textContent = 'Something went wrong sending your request. Please try again, or email visser@meri-ai.com.';
     } finally {
       submitBtn.disabled = false;
     }
