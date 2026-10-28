@@ -17,5 +17,24 @@ if (utmFields.length) {
   });
 }
 
+// The setup call form: js/main.js emails it through Web3Forms. A copy also goes to the Meri Agents
+// app, so the lead shows on All clients. Best effort: if the app can't be reached, the email still goes.
+const APP_INQUIRY = 'https://meri-agents.vercel.app/api/inquiry';
+const introForm = document.getElementById('intro-form');
+if (introForm) {
+  introForm.addEventListener('submit', () => {
+    const required = [...introForm.querySelectorAll('[required]')];
+    const valid = required.every((input) =>
+      input.type === 'checkbox' ? input.checked : input.value.trim() && (input.type !== 'email' || input.checkValidity()));
+    if (!valid) return;                       // main.js shows what's missing; nothing is sent
+    const data = Object.fromEntries(new FormData(introForm).entries());
+    delete data.access_key;
+    fetch(APP_INQUIRY, {
+      method: 'POST', mode: 'cors', keepalive: true,
+      headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data),
+    }).catch(() => {});
+  });
+}
+
 const year = document.getElementById('year');
 if (year) year.textContent = String(new Date().getFullYear());
