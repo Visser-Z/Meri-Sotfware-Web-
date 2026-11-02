@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LinkedIn post · 1080×1350</title>
+<link rel="stylesheet" href="li.css">
+<style>
+  /* LinkedIn feed post, 4:5 portrait. Pick the post with ?p=<id> (see POSTS below). */
+  .post {
+    position: relative;
+    width: 1080px;
+    height: 1350px;
+    padding: 72px;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-warm-canvas);
+    overflow: hidden;
+  }
+  .post--dark { background: var(--color-carbon-black); color: var(--color-paper-white); }
+  .post--dark .wordmark i { color: var(--color-smoke); }
+
+  .post__top { display: flex; justify-content: space-between; align-items: center; }
+  .post__kicker { margin-top: 64px; font-size: 22px; color: var(--color-slate); }
+  .post--dark .post__kicker { color: var(--color-smoke); }
+  .post__headline { margin-top: 24px; font-size: 104px; line-height: 0.96; }
+  /* highlight sits inside the cap height so it never covers the line above */
+  .post__headline em { font-style: normal; background: linear-gradient(transparent 14%, var(--color-mint-chip) 14%, var(--color-mint-chip) 88%, transparent 88%); padding: 0 10px; margin: 0 -4px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+  .post--dark .post__headline em { background: none; color: var(--color-mint-chip); padding: 0; margin: 0; }
+
+  .card {
+    margin-top: 48px;
+    background: var(--color-paper-white);
+    border-radius: var(--radius-cards);
+    padding: 40px 44px;
+  }
+  .card__lede { font-size: 27px; line-height: 1.35; letter-spacing: -0.01em; color: var(--color-graphite); }
+  .rows { margin-top: 28px; list-style: none; }
+  .rows li {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    align-items: baseline;
+    padding: 18px 0;
+    border-top: 1.5px solid var(--color-mist-gray);
+    font-size: 27px;
+    line-height: 1.3;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  .rows .n { font-family: var(--font-suisseintlmono); font-size: 18px; color: var(--color-smoke); font-weight: 400; }
+
+  .fits { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .fits .label { font-size: 18px; color: var(--color-slate); margin-right: 6px; }
+  .fits .tag { font-size: 17px; padding: 8px 18px; }
+
+  .cta {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--color-carbon-black);
+    color: var(--color-paper-white);
+    border-radius: var(--radius-buttons);
+    padding: 30px 36px;
+  }
+  .post--dark .cta { background: var(--color-paper-white); color: var(--color-carbon-black); }
+  .cta__title { font-size: 46px; }
+  .cta__sub { margin-top: 8px; font-size: 20px; color: var(--color-smoke); }
+  .cta__arrow { font-size: 56px; line-height: 1; }
+  .foot { margin-top: 20px; font-size: 16px; color: var(--color-smoke); display: flex; justify-content: space-between; }
+
+  /* process steps */
+  .steps { margin-top: 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .step { background: var(--color-graphite); border-radius: var(--radius-xl); padding: 30px 32px; min-height: 250px; }
+  .step:first-child { background: var(--color-mint-chip); color: var(--color-carbon-black); }
+  .step__n { font-size: 18px; color: var(--color-smoke); display: flex; justify-content: space-between; }
+  .step:first-child .step__n { color: var(--color-slate); }
+  .step__t { margin-top: 28px; font-size: 54px; }
+  .step__d { margin-top: 14px; font-size: 21px; line-height: 1.35; color: var(--color-ash); }
+  .step:first-child .step__d { color: var(--color-slate); }
+
+  /* statement */
+  .statement { margin-top: 180px; font-size: 136px; line-height: 0.95; }
+  .statement span { display: block; white-space: nowrap; }
+  .statement span:nth-child(2) { color: var(--color-smoke); }
+  .statement span:nth-child(3) { color: var(--color-slate); }
+  .statement__after { margin-top: 48px; font-size: 40px; line-height: 1.2; font-weight: 500; letter-spacing: -0.02em; max-width: 760px; }
+  .statement__after b { font-weight: 500; background: var(--color-voltage-yellow); color: #000; padding: 0 8px; margin-left: -8px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+  // Copy comes straight from the site (index.html). Keep claims to what's published there.
+  const POSTS = {
+    produce: {
+      type: 'project', kicker: "What we've built · Produce trading",
+      headline: 'Market reports that <em>read themselves.</em>',
+      lede: 'For a fresh-produce trader whose market agents report back in stacks of fixed-format PDFs.',
+      rows: ['Market reports pulled and read automatically, every day',
+             'Payments reconciled against deliveries, to the cent',
+             "Buy plan and dispatch sheets from what actually sold"],
+      fits: ['Produce', 'Consignment', 'Wholesale'],
+    },
+    workshop: {
+      type: 'project', kicker: "What we've built · Engineering workshop",
+      headline: 'The floor and the office, <em>one picture.</em>',
+      lede: 'For a gear and engineering workshop where every job is bespoke.',
+      rows: ['Each job quoted in the app',
+             'Followed through the shop, stage by stage',
+             'Nothing sits forgotten on a bench'],
+      fits: ['Fabricators', 'Machine builders', 'Equipment makers', 'Repair shops'],
+    },
+    haulage: {
+      type: 'project', kicker: "What we've built · Mining haulage",
+      headline: 'Hauled against billed. <em>Reconciled.</em>',
+      lede: 'For a coal-haulage operation running on weighbridge tickets and delivery dockets.',
+      rows: ['Tickets and dockets captured as they come in',
+             'Tonnage hauled reconciled against tonnage billed',
+             'The whole fleet visible in one place'],
+      fits: ['Bulk transport', 'Cross-border logistics', 'Quarrying'],
+    },
+    petroleum: {
+      type: 'project', kicker: "What we've built · Petroleum engineering",
+      headline: 'Check the safety file. <em>Don\'t build it.</em>',
+      lede: 'For a petroleum-engineering firm with a full compliance file behind every project.',
+      rows: ['File assembled from a reusable document library',
+             "Plus the project's own details, filled in",
+             'The safety officer reviews and signs a complete file'],
+      fits: ['Construction', 'EPC', 'Mining', 'Regulated operations'],
+    },
+    process: { type: 'process' },
+    statement: { type: 'statement' },
+  };
+
+  const header = (tag) => `
+    <div class="post__top">
+      <span class="wordmark"><img src="../../../images/logo-mark.svg" alt=""><span><b>Meri</b><i>.Software</i></span></span>
+      ${tag || ''}
+    </div>`;
+  const cta = `
+    <div class="cta">
+      <div><div class="cta__title display">Free AI Opportunity Map</div>
+      <div class="cta__sub mono">One page · where AI would pay · what a first build costs</div></div>
+      <div class="cta__arrow">→</div>
+    </div>`;
+
+  const render = {
+    project: (p) => `
+      <div class="post">
+        ${header('<span class="tag">Case study</span>')}
+        <div class="post__kicker mono">${p.kicker}</div>
+        <h1 class="post__headline display">${p.headline}</h1>
+        <div class="card">
+          <p class="card__lede">${p.lede}</p>
+          <ol class="rows">${p.rows.map((r, i) => `<li><span class="n">0${i + 1}</span><span>${r}</span></li>`).join('')}</ol>
+        </div>
+        <div class="fits"><span class="label mono">Fits:</span>${p.fits.map((f) => `<span class="tag tag--ghost">${f}</span>`).join('')}</div>
+        ${cta}
+        <div class="foot mono"><span>A real, working system we built</span><span>Client names stay private</span></div>
+      </div>`,
+    process: () => `
+      <div class="post post--dark">
+        ${header('<span class="tag tag--dark">How we work</span>')}
+        <div class="post__kicker mono">No big-bang transformation</div>
+        <h1 class="post__headline display">Start small. Prove it. <em>Then scale.</em></h1>
+        <div class="steps">
+          ${[['AI Opportunity Map', 'Where AI would genuinely pay, where it wouldn\'t, and what a first build costs.', 'Free'],
+             ['A small first build', 'The fix for the one bottleneck that matters most. Scoped.', ''],
+             ['Live in your operation', 'On your real documents and data. Every exception lands with a person.', ''],
+             ['Run & improve', 'When it runs itself, we automate the next job.', '']]
+            .map(([t, d, f], i) => `<div class="step"><div class="step__n mono"><span>Step 0${i + 1}</span><span>${f}</span></div>
+              <div class="step__t display">${t}</div><p class="step__d">${d}</p></div>`).join('')}
+        </div>
+        ${cta}
+      </div>`,
+    statement: () => `
+      <div class="post post--dark">
+        ${header('<span class="tag tag--dark">Operations, automated.</span>')}
+        <h1 class="statement display"><span>The retyping.</span><span>The reconciling.</span><span>The chasing.</span></h1>
+        <p class="statement__after">That's the work we hand to AI.<br><b>The decisions stay with your people.</b></p>
+        ${cta}
+      </div>`,
+  };
+
+  const id = new URLSearchParams(location.search).get('p') || 'produce';
+  const post = POSTS[id];
+  document.getElementById('root').innerHTML = render[post.type](post);
+</script>
+</body>
+</html>
