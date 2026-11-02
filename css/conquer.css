@@ -117,6 +117,22 @@ h1, h2, h3, h5, p { margin: 0; }
 .cq-points h3 { font-size: 17px; }
 .cq-points p { margin-top: 4px; font-size: 15px; color: var(--text); }
 
+/* pricing */
+.cq-offer { margin-top: 18px; display: inline-block; background: var(--teal-tint); color: var(--teal-dark);
+  border-radius: 10px; padding: 10px 14px; font-size: 15px; }
+.cq-plans { display: grid; gap: 16px; margin-top: 28px; max-width: 860px; }
+.cq-plan { padding: 24px; display: flex; flex-direction: column; gap: 4px; position: relative; }
+.cq-plan h3 { font-size: 20px; }
+.cq-plan__for { color: var(--muted); font-size: 14px; }
+.cq-plan__price { margin-top: 12px; display: flex; align-items: baseline; gap: 4px; }
+.cq-plan__price b { font-size: 40px; font-weight: 800; letter-spacing: -0.02em; }
+.cq-plan__price span { color: var(--muted); font-size: 15px; }
+.cq-plan .cq-ticks { margin: 14px 0 22px; flex: 1; }
+.cq-plan--best { box-shadow: 0 0 0 2px var(--teal), 0 10px 30px -12px rgba(22,132,125,.35); }
+.cq-plan__tag { position: absolute; top: -12px; left: 20px; background: var(--teal); color: #fff; font-size: 12px;
+  font-weight: 700; padding: 3px 10px; border-radius: 999px; }
+.cq-note { margin-top: 16px; font-size: 14px; color: var(--muted); }
+
 /* faq */
 .cq-faq { max-width: 780px; }
 .cq-faq__list { margin-top: 20px; border-top: 1px solid rgba(0,0,0,.1); }
@@ -173,6 +189,7 @@ h1, h2, h3, h5, p { margin: 0; }
   .cq-band__grid { grid-template-columns: repeat(3, 1fr); }
   .cq-form__row { grid-template-columns: 1fr 1fr; }
   .cq-points { grid-template-columns: 1fr 1fr; }
+  .cq-plans { grid-template-columns: 1fr 1fr; }
   .cq-hide-sm { display: inline-flex; }
 }
 @media (min-width: 900px) {
