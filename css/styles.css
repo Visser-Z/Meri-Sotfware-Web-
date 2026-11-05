@@ -181,6 +181,20 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .logo b { font-weight: var(--font-weight-medium); }
 .logo i { font-style: normal; color: var(--color-smoke); }
+/* Brand line beside the logo: The Operations Automation Company */
+.logo__tag {
+  margin-left: 6px;
+  padding-left: 12px;
+  border-left: 1px solid var(--color-ash);
+  font-family: var(--font-suisseintlmono);
+  font-size: 10.5px;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--color-slate);
+  font-weight: var(--font-weight-regular);
+}
+@media (max-width: 1279px) { .logo__tag { display: none; } }
 
 .nav__pill {
   display: flex;
