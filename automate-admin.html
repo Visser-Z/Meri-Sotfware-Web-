@@ -566,8 +566,8 @@
           phone: email ? '' : contact,
           admin_cost_shown: costShown,
         });
-        // Counts the lead in Google Ads once the Google tag is added to this page
-        if (window.gtag && !captured) window.gtag('event', 'generate_lead');
+        // Tag Manager counts the lead: map_request is the trigger for the Google Ads conversion
+        if (!captured) { (window.dataLayer = window.dataLayer || []).push({ event: 'map_request', lead_page: 'ai_workers' }); if (window.gtag) window.gtag('event', 'generate_lead'); }
         captured = true;
         showDone(form);
         stick.hidden = true;

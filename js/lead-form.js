@@ -77,6 +77,8 @@
           phone: email ? '' : contact,
           page: window.location.pathname,
         });
+        // Tag Manager counts the lead: map_request is the trigger for the Google Ads conversion
+        (window.dataLayer = window.dataLayer || []).push({ event: 'map_request', lead_page: 'home' });
         if (window.gtag) window.gtag('event', 'generate_lead');
         const done = document.createElement('div');
         done.className = 'done';
