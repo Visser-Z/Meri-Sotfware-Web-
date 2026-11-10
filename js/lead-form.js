@@ -1,5 +1,7 @@
 // Two question lead form: email or WhatsApp number, then what they're struggling with most.
 // Only the first answer can hold up a send. Posts to Web3Forms like every other form on the site.
+// A form can set its own chips (data-jobs, split by |), email subject (data-subject), thank you line
+// (data-thanks) and Tag Manager label (data-page). Without them it asks for the free AI Opportunity Map.
 (() => {
   const forms = document.querySelectorAll('.lead-form');
   if (!forms.length) return;
@@ -36,7 +38,8 @@
     const note = form.querySelector('.error');
     const button = form.querySelector('button[type="submit"]');
 
-    JOBS.forEach((job) => {
+    const jobs = form.dataset.jobs ? form.dataset.jobs.split('|') : JOBS;
+    jobs.forEach((job) => {
       const chip = document.createElement('label');
       const radio = Object.assign(document.createElement('input'), { type: 'radio', name: `struggle-${index}`, value: job });
       const text = document.createElement('span');
@@ -69,7 +72,7 @@
       try {
         await post({
           from_name: form.dataset.from || 'Meri.Software website',
-          subject: `AI Opportunity Map request: ${contact}`,
+          subject: `${form.dataset.subject || 'AI Opportunity Map request'}: ${contact}`,
           contact,
           struggling_with: struggle,
           // Web3Forms uses "email" as the reply address, so only set it for a real one
@@ -78,12 +81,13 @@
           page: window.location.pathname,
         });
         // Tag Manager counts the lead: map_request is the trigger for the Google Ads conversion
-        (window.dataLayer = window.dataLayer || []).push({ event: 'map_request', lead_page: 'home' });
+        (window.dataLayer = window.dataLayer || []).push({ event: 'map_request', lead_page: form.dataset.page || 'home' });
         if (window.gtag) window.gtag('event', 'generate_lead');
         const done = document.createElement('div');
         done.className = 'done';
         done.setAttribute('role', 'status');
-        done.innerHTML = '<p class="big">Got it. Thank you.</p><p>We\'ll reply within 24 hours with your free map.</p>';
+        done.innerHTML = '<p class="big">Got it. Thank you.</p><p></p>';
+        done.lastChild.textContent = form.dataset.thanks || 'We\'ll reply within 24 hours with your free map.';
         form.replaceWith(done);
       } catch (error) {
         say('That did not send. Please try again, or email visser@meri-ai.com.');
