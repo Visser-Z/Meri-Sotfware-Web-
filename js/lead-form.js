@@ -2,6 +2,7 @@
 // Only the first answer can hold up a send. Posts to Web3Forms like every other form on the site.
 // A form can set its own chips (data-jobs, split by |), email subject (data-subject), thank you line
 // (data-thanks) and Tag Manager label (data-page). Without them it asks for the free AI Opportunity Map.
+// An optional .phone-field asks for a call back number; it hides itself when the first answer is already a phone.
 (() => {
   const forms = document.querySelectorAll('.lead-form');
   if (!forms.length) return;
@@ -37,6 +38,8 @@
     const chips = form.querySelector('.chips');
     const note = form.querySelector('.error');
     const button = form.querySelector('button[type="submit"]');
+    const phoneField = form.querySelector('.phone-field');
+    const phoneBox = phoneField && phoneField.closest('.phone-opt');
 
     const jobs = form.dataset.jobs ? form.dataset.jobs.split('|') : JOBS;
     jobs.forEach((job) => {
@@ -53,7 +56,12 @@
     });
 
     const say = (message) => { note.textContent = message; note.hidden = !message; };
-    input.addEventListener('input', () => say(''));
+    input.addEventListener('input', () => {
+      say('');
+      // No need to ask for a number twice
+      if (phoneBox) phoneBox.hidden = isPhone(input.value.trim());
+    });
+    if (phoneField) phoneField.addEventListener('input', () => say(''));
 
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
@@ -64,6 +72,12 @@
         input.focus();
         return;
       }
+      const callBack = phoneField && !phoneBox.hidden ? phoneField.value.trim() : '';
+      if (callBack && !isPhone(callBack)) {
+        say('Please check the phone number, or leave it empty.');
+        phoneField.focus();
+        return;
+      }
       if (form.querySelector('[name="botcheck"]').checked) return;
       say('');
       button.disabled = true;
@@ -72,12 +86,14 @@
       try {
         await post({
           from_name: form.dataset.from || 'Meri.Software website',
-          subject: `${form.dataset.subject || 'AI Opportunity Map request'}: ${contact}`,
+          // The call back number goes in the subject, so it shows in the inbox without opening the lead
+          subject: `${form.dataset.subject || 'AI Opportunity Map request'}: ${contact}${callBack ? `, call ${callBack}` : ''}`,
           contact,
           struggling_with: struggle,
           // Web3Forms uses "email" as the reply address, so only set it for a real one
           email: email ? contact : '',
-          phone: email ? '' : contact,
+          phone: callBack || (email ? '' : contact),
+          call_back: callBack ? 'Yes, call this number' : '',
           page: window.location.pathname,
         });
         // Tag Manager counts the lead: map_request is the trigger for the Google Ads conversion

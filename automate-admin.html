@@ -246,6 +246,13 @@
     html { scroll-behavior: auto; }
     .marquee div { animation: none; }
   }
+  /* Optional call back number under the first form question */
+  .phone-opt { margin-top: 12px; }
+  .phone-opt[hidden] { display: none; }
+  .phone-opt label { display: block; margin-bottom: 8px; }
+  .phone-opt label span { color: var(--dim); }
+  .close .phone-opt label span { color: var(--panel-text); opacity: 0.75; }
+  .lead-form input.phone-field { height: 52px; font-size: 17px; }
 </style>
 </head>
 <body>
@@ -274,6 +281,7 @@
     <form class="lead-form" novalidate>
       <label class="mono" for="contact-top">1. Where do we send your free map?</label>
       <input class="contact" id="contact-top" type="text" autocomplete="email" placeholder="Email or WhatsApp number" aria-describedby="fine-top">
+      <div class="phone-opt"><label class="mono" for="phone-top">Phone number, for a quick call back <span>(optional)</span></label><input class="contact phone-field" id="phone-top" type="tel" autocomplete="tel" inputmode="tel" placeholder="e.g. 082 123 4567"></div>
       <fieldset><legend class="mono">2. What are you struggling with most?</legend><div class="chips"></div><input class="other" type="text" placeholder="In a few words" aria-label="What are you struggling with?" hidden></fieldset>
       <button class="btn" type="submit">Send my free map <span aria-hidden="true">→</span></button>
       <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -425,6 +433,7 @@
   <form class="lead-form" novalidate>
     <label class="mono" for="contact-end">1. Where do we send your free map?</label>
     <input class="contact" id="contact-end" type="text" autocomplete="email" placeholder="Email or WhatsApp number" aria-describedby="fine-end">
+    <div class="phone-opt"><label class="mono" for="phone-end">Phone number, for a quick call back <span>(optional)</span></label><input class="contact phone-field" id="phone-end" type="tel" autocomplete="tel" inputmode="tel" placeholder="e.g. 082 123 4567"></div>
     <fieldset><legend class="mono">2. What are you struggling with most?</legend><div class="chips"></div><input class="other" type="text" placeholder="In a few words" aria-label="What are you struggling with?" hidden></fieldset>
     <button class="btn" type="submit">Send my free map <span aria-hidden="true">→</span></button>
     <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -541,7 +550,14 @@
     const note = form.querySelector('.error');
     const button = form.querySelector('button[type="submit"]');
     const say = (message) => { note.textContent = message; note.hidden = !message; };
-    input.addEventListener('input', () => say(''));
+    const phoneField = form.querySelector('.phone-field');
+    const phoneBox = phoneField && phoneField.closest('.phone-opt');
+    input.addEventListener('input', () => {
+      say('');
+      // No need to ask for a number twice
+      if (phoneBox) phoneBox.hidden = isPhone(input.value.trim());
+    });
+    if (phoneField) phoneField.addEventListener('input', () => say(''));
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
       const contact = input.value.trim();
@@ -551,6 +567,12 @@
         input.focus();
         return;
       }
+      const callBack = phoneField && !phoneBox.hidden ? phoneField.value.trim() : '';
+      if (callBack && !isPhone(callBack)) {
+        say('Please check the phone number, or leave it empty.');
+        phoneField.focus();
+        return;
+      }
       if (form.querySelector('[name="botcheck"]').checked) return;
       say('');
       button.disabled = true;
@@ -558,12 +580,14 @@
       const struggle = picked ? (!other.hidden && other.value.trim()) || picked.value : '';
       try {
         await post({
-          subject: `AI Opportunity Map request: ${contact}`,
+          // The call back number goes in the subject, so it shows in the inbox without opening the lead
+          subject: `AI Opportunity Map request: ${contact}${callBack ? `, call ${callBack}` : ''}`,
           contact,
           struggling_with: struggle,
           // Web3Forms uses "email" as the reply address, so only set it for a real one
           email: email ? contact : '',
-          phone: email ? '' : contact,
+          phone: callBack || (email ? '' : contact),
+          call_back: callBack ? 'Yes, call this number' : '',
           admin_cost_shown: costShown,
         });
         // Tag Manager counts the lead: map_request is the trigger for the Google Ads conversion
