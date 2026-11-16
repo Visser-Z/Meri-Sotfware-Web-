@@ -11,89 +11,161 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Need a virtual assistant? Try an AI worker · Meri.Software</title>
-<meta name="description" content="An AI worker does the admin you'd hand a virtual assistant: reads documents, captures data, matches payments and follows up. Every morning, no salary, no leave.">
+<title>AI Worker: your virtual admin assistant · Meri.Software</title>
+<meta name="description" content="The Meri AI Worker is a virtual admin assistant that captures your documents, matches your payments and follows up for you every morning. You approve what matters. Start with a free admin check.">
 <link rel="icon" type="image/svg+xml" href="images/logo-mark.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Geist:wght@300;400;500&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/frame.css">
-<style>
-  /* One short page for virtual assistant searches: the form is the page */
-  .hero--va .hero__main { padding-top: 44px; }
-  .hero--va .lead-form { max-width: 760px; }
-  .proof { margin-top: 18px; color: var(--dim); }
-  .proof a { color: var(--ink); font-weight: 500; }
-  .close .btn { margin-top: 6px; }
-  @media (max-width: 640px) {
-    .hero--va .hero__main { padding-top: 22px; }
-    /* Smaller headline on phones, so the form starts higher up */
-    .hero--va h1 { font-size: 11vw; }
-  }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/pro.css">
 </head>
 <body>
-<div class="page">
 
-<nav class="bar mono">
-  <a class="logo" href="index.html"><img src="images/logo-mark.svg" alt="">Meri.Software</a>
-  <a class="cta" href="#start" data-to-form>Get started →</a>
-</nav>
-
-<header class="hero hero--solo hero--va">
-  <div class="hero__main" id="start">
-    <h1>Need a virtual assistant? <span class="hot">Try an AI worker.</span></h1>
-    <p class="lead">It does the admin you'd hand a virtual assistant: reads your invoices and documents, captures the data, matches payments and follows up. Every morning, with no salary and no leave. You approve what matters.</p>
-
-    <form class="lead-form" novalidate data-from="Meri.Software virtual assistant page" data-subject="Virtual assistant enquiry" data-page="virtual_assistant" data-thanks="We'll reply within 24 hours with what an AI worker could take off your hands, and what it costs." data-jobs="Invoices and payments|Data capturing|Email and follow ups|Reports|Something else">
-      <label class="mono" for="contact-top">1. Where do we reach you?</label>
-      <input class="contact contact-field" id="contact-top" type="text" autocomplete="email" placeholder="Email or WhatsApp number" aria-describedby="fine-top">
-      <div class="phone-opt"><label class="mono" for="phone-top">Phone number, for a quick call back <span>(optional)</span></label><input class="contact phone-field" id="phone-top" type="tel" autocomplete="tel" inputmode="tel" placeholder="e.g. 082 123 4567"></div>
-      <fieldset><legend class="mono">2. What should it take off your hands?</legend><div class="chips"></div><input class="other" type="text" placeholder="In a few words" aria-label="What should it take off your hands?" hidden></fieldset>
-      <button class="btn" type="submit">Show me what it can do <span aria-hidden="true">→</span></button>
-      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <p class="error" role="alert" hidden></p>
-      <p class="fine" id="fine-top">Free, no obligation. We reply within 24 hours with what an AI worker could do for you, and the cost. <a href="privacy.html" target="_blank">Privacy Notice</a>.</p>
-    </form>
-    <p class="proof mono">Rather talk now? Call <a href="tel:+27817013089">081 701 3089</a></p>
+<header class="top">
+  <div class="wrap top__inner">
+    <a class="logo" href="index.html"><img src="images/logo-mark.svg" alt="">Meri.Software</a>
+    <nav aria-label="Page sections">
+      <a href="#what">What it does</a>
+      <a href="#how">How it works</a>
+      <a href="#questions">Questions</a>
+    </nav>
+    <a class="btn btn--teal" href="#check" data-to-form>Contact us</a>
   </div>
 </header>
 
-<section>
-  <div class="head">
-    <h2>Virtual assistant or <span class="hot">AI worker?</span></h2>
-  </div>
-  <div class="versus">
-    <div class="top blank mono"></div><div class="top mono">A virtual assistant</div><div class="top ai mono">An AI worker</div>
-    <div class="what">Hours</div><div>Their working hours</div><div class="ai">Every day, at the times you set</div>
-    <div class="what">Time off</div><div>Leave and sick days</div><div class="ai">None</div>
-    <div class="what">Getting started</div><div>You train them, and again when they leave</div><div class="ai">Set up once, around your systems</div>
-    <div class="what">Decisions</div><div>You check their work</div><div class="ai">It asks before anything important goes out</div>
-  </div>
-  <div class="three">
-    <div><b>Reads documents</b><span>Invoices, dockets and statements become clean data. No retyping.</span></div>
-    <div><b>Matches payments</b><span>Every payment matched to its invoice, and the gaps flagged.</span></div>
-    <div><b>Follows up</b><span>Quotes and late payers followed up in your name, after your OK.</span></div>
+<main>
+
+<section class="hero">
+  <canvas data-waves aria-hidden="true"></canvas>
+  <div class="wrap hero__inner">
+    <div class="hero__text">
+      <h1>Meet your AI Worker: a virtual admin assistant, without the hiring.</h1>
+      <p class="hero__sub">It captures your documents, matches your payments and follows up for you, every morning. You approve what matters.</p>
+      <div class="hero__actions">
+        <a class="btn btn--light" href="#check" data-to-form>Get a free admin check</a>
+        <a class="btn btn--line" href="https://wa.me/27817013089?text=Hi%20Meri.Software%2C%20I%27m%20looking%20for%20a%20virtual%20admin%20assistant." target="_blank" rel="noopener">WhatsApp us</a>
+      </div>
+      <p class="hero__note">Built in Cape Town. 21 systems built for South African businesses.</p>
+    </div>
+    <aside class="memo" aria-label="Sample morning summary">
+      <div class="memo__head">07:00 · Your AI Worker <span>Sample</span></div>
+      <ul>
+        <li>Invoices captured <b>38</b></li>
+        <li>Payments matched <b>12</b></li>
+        <li>Missing documents chased <b>2</b></li>
+        <li class="ask">Follow ups waiting for your OK <b>3</b></li>
+      </ul>
+    </aside>
   </div>
 </section>
 
-<section class="close">
-  <h2>Name the job.<br><span class="hot">See it done.</span></h2>
-  <a class="btn" href="#start" data-to-form>Show me what it can do <span aria-hidden="true">→</span></a>
-  <p class="fine">Built in Cape Town by Meri.Software. 21 systems built for South African businesses.</p>
+<section class="sect sect--white" id="what">
+  <div class="wrap">
+    <p class="eyebrow">What your AI Worker can do</p>
+    <h2>The admin you'd hand an assistant, done before your day starts.</h2>
+    <p class="sect__lead">Pick the jobs you want off your plate. Your AI Worker is set up for your business, works inside your email and the systems you already use, and asks before anything important goes out.</p>
+    <div class="cats">
+      <article class="cat"><span class="card__num">01</span><h3>Data capturing</h3><ul><li>Invoices, dockets and statements read into your spreadsheet or system</li><li>Delivery notes and PODs matched to their orders</li><li>PDFs and scans turned into clean data, nothing retyped</li></ul></article>
+      <article class="cat"><span class="card__num">02</span><h3>Payments and invoices</h3><ul><li>Every payment matched to the invoice it pays</li><li>A daily list of what's still unpaid, and how late</li><li>Supplier invoices checked against delivery records and agreed rates</li></ul></article>
+      <article class="cat"><span class="card__num">03</span><h3>Follow ups</h3><ul><li>Reminders for late payments, in your name</li><li>Quote follow ups after 2, 7 and 14 days</li><li>Missing documents chased until they arrive</li></ul></article>
+      <article class="cat"><span class="card__num">04</span><h3>Inbox and email</h3><ul><li>Incoming email sorted, and attachments filed</li><li>Replies drafted for you to check and send</li><li>Routine customer questions answered from your own records</li></ul></article>
+      <article class="cat"><span class="card__num">05</span><h3>Reports</h3><ul><li>Portal and system reports pulled for you every morning</li><li>A short morning summary of what came in and what needs you</li><li>Weekly numbers in one place, not five spreadsheets</li></ul></article>
+      <article class="cat"><span class="card__num">06</span><h3>Files and paperwork</h3><ul><li>Files and packs put together from your own documents</li><li>Your forms filled in from the job details</li><li>Ready for a person to check and sign</li></ul></article>
+    </div>
+  </div>
 </section>
+
+<section class="sect" id="how">
+  <div class="wrap">
+    <p class="eyebrow">How it works</p>
+    <h2>Three steps to your first morning summary.</h2>
+    <div class="steps">
+      <div class="step"><h3>Free admin check</h3><p>A short call or a few messages. You tell us the admin that eats your week.</p></div>
+      <div class="step"><h3>Set up around you</h3><p>We connect it to your email and the files you already use, and agree what it may do on its own.</p></div>
+      <div class="step"><h3>It starts working</h3><p>Every morning it does the work and sends your summary. Anything important waits for your OK.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sect sect--white" id="fit">
+  <div class="wrap">
+    <p class="eyebrow">Person or AI?</p>
+    <h2>Not sure which you need?</h2>
+    <p class="sect__lead">An honest guide. If a person suits you better, we'll tell you on the call.</p>
+    <div class="fit">
+      <div>
+        <h3>Hire a person when</h3>
+        <ul>
+          <li>You need someone on the phone with your customers</li>
+          <li>The work is different every day</li>
+          <li>It needs judgement more than speed</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Use an AI Worker when</h3>
+        <ul>
+          <li>The same admin comes back every day or week</li>
+          <li>It's documents, payments, follow ups and reports</li>
+          <li>You want it done by 07:00, with no leave or sick days</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ask" id="check">
+  <div class="wrap ask__grid">
+    <div>
+      <p class="eyebrow">Free admin check</p>
+      <h2>Tell us what eats your week.</h2>
+      <p class="ask__lead">Within 24 hours we'll tell you what an AI Worker could take off your hands, how it would work, and what it costs.</p>
+      <ul class="ask__list">
+        <li>Free, with no obligation</li>
+        <li>A reply within 24 hours</li>
+        <li>Nothing changes until you say yes</li>
+      </ul>
+      <p class="call">Rather talk now? Call <a href="tel:+27817013089">081 701 3089</a> or <a href="https://wa.me/27817013089?text=Hi%20Meri.Software%2C%20I%27m%20looking%20for%20a%20virtual%20admin%20assistant." target="_blank" rel="noopener">WhatsApp us</a>.</p>
+    </div>
+    <div class="panel">
+      <form class="lead-form" novalidate data-from="Meri.Software virtual assistant page" data-subject="Virtual assistant enquiry" data-page="virtual_assistant" data-thanks="We'll reply within 24 hours with what an assistant could take off your hands, and what it costs." data-jobs="Data capturing|Payments and invoices|Follow ups|Inbox and email|Reports|Files and paperwork|Something else">
+        <label for="contact-top">Where do we reach you?</label>
+        <input class="contact contact-field" id="contact-top" type="text" autocomplete="email" placeholder="Email or WhatsApp number" aria-describedby="fine-top">
+        <div class="phone-opt"><label for="phone-top">Phone number, for a quick call back <span>(optional)</span></label><input class="contact phone-field" id="phone-top" type="tel" autocomplete="tel" inputmode="tel" placeholder="e.g. 082 123 4567"></div>
+        <fieldset><legend>What should it take off your hands?</legend><div class="chips"></div><input class="other" type="text" placeholder="In a few words" aria-label="What should it take off your hands?" hidden></fieldset>
+        <button class="btn btn--dark" type="submit">Get my free admin check</button>
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <p class="error" role="alert" hidden></p>
+        <p class="fine" id="fine-top">By sending, you agree we may contact you about your admin check. <a href="privacy.html" target="_blank">Privacy Notice</a>.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="sect" id="questions">
+  <div class="wrap">
+    <p class="eyebrow">Questions</p>
+    <h2>Good to know.</h2>
+    <div class="faq">
+      <details><summary>Is it a real person?</summary><p>No. Your AI Worker is software that we set up around your business. It doesn't answer phones or take calls. It does the written admin, and anything that matters waits for your OK.</p></details>
+      <details><summary>What does it cost?</summary><p>It depends on the job and how much of it there is, so we quote after the free admin check, next to what it saves you. The price is in writing before any work starts.</p></details>
+      <details><summary>Do I need new software?</summary><p>No. It works with your email and the files and systems you already use.</p></details>
+      <details><summary>What about my information?</summary><p>It only reads what its job needs. Our <a href="privacy.html">Privacy Notice</a> has the details.</p></details>
+    </div>
+  </div>
+</section>
+
+</main>
 
 <footer>
-  <span>© <span id="year">2026</span> Meri Software (Pty) Ltd · Reg. 2026/640209/07</span>
-  <span><a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · visser@meri-ai.com</span>
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Meri Software (Pty) Ltd · Reg. 2026/640209/07</span>
+    <span><a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · visser@meri-ai.com</span>
+  </div>
 </footer>
-
-</div>
-
-<a class="btn stick" id="stick" href="#start" data-to-form>Show me what it can do <span aria-hidden="true">→</span></a>
 
 <script src="js/lead-form.js"></script>
 <script src="js/frame.js"></script>
-<script src="js/whatsapp.js" data-text="Hi Meri.Software, I'm looking for a virtual assistant. What can an AI worker do for me?"></script>
+<script src="js/waves.js"></script>
+<script src="js/whatsapp.js" data-text="Hi Meri.Software, I'm looking for a virtual admin assistant."></script>
 </body>
 </html>
