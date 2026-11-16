@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LinkedIn carousel · Produce trading</title>
+<link rel="stylesheet" href="li.css">
+<style>
+  /* LinkedIn document post: print to PDF, one 1080×1350 page per slide */
+  @page { size: 1080px 1350px; margin: 0; }
+  html, body { background: var(--color-warm-canvas); overflow: visible; }
+  .slide {
+    position: relative;
+    width: 1080px;
+    height: 1350px;
+    padding: 72px;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-warm-canvas);
+    overflow: hidden;
+    break-after: page;
+  }
+  .slide--dark { background: var(--color-carbon-black); color: var(--color-paper-white); }
+  .slide__top { display: flex; justify-content: space-between; align-items: center; }
+  .count { font-size: 20px; color: var(--color-smoke); }
+  .kicker { margin-top: 56px; font-size: 22px; color: var(--color-slate); }
+  .slide--dark .kicker { color: var(--color-smoke); }
+  .h { margin-top: 22px; font-size: 104px; line-height: 0.96; }
+  .h--xl { font-size: 136px; }
+  .h em { font-style: normal; background: linear-gradient(transparent 14%, var(--color-mint-chip) 14%, var(--color-mint-chip) 88%, transparent 88%);
+          padding: 0 10px; margin: 0 -4px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+  .slide--dark .h em { background: none; color: var(--color-mint-chip); padding: 0; margin: 0; }
+  .p { margin-top: 32px; font-size: 32px; line-height: 1.3; letter-spacing: -0.015em; max-width: 860px; color: var(--color-graphite); }
+  .slide--dark .p { color: var(--color-ash); }
+
+  .shot {
+    position: relative;
+    margin-top: 56px;
+    flex: 1;
+    min-height: 0;
+    background: var(--color-paper-white);
+    border-radius: var(--radius-cards) var(--radius-cards) 0 0;
+    margin-bottom: -72px;
+    padding: 20px 20px 0;
+    overflow: hidden;
+  }
+  .shot__bar { display: flex; justify-content: space-between; align-items: center; padding: 4px 8px 16px; }
+  .shot__url { font-size: 17px; color: var(--color-smoke); }
+  .shot__bar .tag { font-size: 15px; padding: 6px 14px; }
+  .shot img { display: block; width: 100%; border-radius: 16px 16px 0 0; }
+  .shot--phone { background: var(--color-carbon-black); width: 560px; align-self: center; padding: 16px 16px 0; border-radius: 56px 56px 0 0; }
+  .shot--phone img { border-radius: 42px 42px 0 0; }
+  .shot--phone .shot__bar { position: absolute; top: 96px; right: -150px; padding: 0; }
+  .shot--phone .shot__url { display: none; }
+  .shot--phone { overflow: visible; }
+  .shot--phone img { height: 100%; object-fit: cover; object-position: top; }
+
+  .before { margin-top: 48px; list-style: none; }
+  .before li { display: grid; grid-template-columns: 64px 1fr; padding: 26px 0; border-top: 1.5px solid #2a2a2a;
+               font-size: 34px; line-height: 1.25; font-weight: 500; letter-spacing: -0.015em; }
+  .before .x { font-family: var(--font-suisseintlmono); color: #ff8a6b; font-size: 24px; padding-top: 6px; }
+
+  .swipe { margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-size: 20px; color: var(--color-slate); }
+  .swipe .tag { font-size: 20px; }
+  .art { position: absolute; right: 56px; bottom: 150px; width: 400px; }
+
+  .cta { margin-top: auto; background: var(--color-paper-white); color: var(--color-carbon-black); border-radius: var(--radius-cards); padding: 44px; }
+  .cta .display { font-size: 72px; }
+  .cta p { margin-top: 18px; font-size: 26px; line-height: 1.35; color: var(--color-slate); }
+  .cta .tag { margin-top: 28px; background: var(--color-carbon-black); color: var(--color-paper-white); font-size: 22px; padding: 14px 26px; }
+  .foot { margin-top: 20px; font-size: 16px; color: var(--color-smoke); display: flex; justify-content: space-between; }
+</style>
+</head>
+<body>
+<script>
+  // Case study: produce trading. Every claim here is published on index.html / meri-fruits.html.
+  const total = 6;
+  const head = (n, dark) => `
+    <div class="slide__top">
+      <span class="wordmark"><img src="../../../images/logo-mark.svg" alt=""><span><b>Meri</b><i>.Software</i></span></span>
+      <span class="count mono">0${n} / 0${total}</span>
+    </div>`;
+  const shot = (src, url, phone) => `
+    <div class="shot${phone ? ' shot--phone' : ''}">
+      <div class="shot__bar"><span class="shot__url mono">${url}</span><span class="tag">Sample data</span></div>
+      <img src="../../../images/meri-fruits/${src}" alt="">
+    </div>`;
+
+  document.write(`
+  <section class="slide">
+    ${head(1)}
+    <div class="kicker mono">Case study · Produce trading</div>
+    <h1 class="h h--xl display">The market reports now <em>read themselves.</em></h1>
+    <p class="p">How we automated the back office of a fresh-produce trader, from the morning reports to what goes on the next truck.</p>
+    <svg class="art" viewBox="0 0 220 191" aria-hidden="true">
+      <ellipse cx="104" cy="172" rx="84" ry="9" fill="#c6c6c6"/>
+      <polygon points="104,104 178,136 104,168 30,136" fill="#f3f3f3"/>
+      <polygon points="30,136 104,168 104,176 30,144" fill="#d4d4d4"/>
+      <polygon points="104,168 178,136 178,144 104,176" fill="#b3b3b3"/>
+      <polygon points="104,60 146,82 104,104 62,82" fill="#d1ffca"/>
+      <polygon points="62,82 104,104 104,150 62,128" fill="#b4eaab"/>
+      <polygon points="104,104 146,82 146,128 104,150" fill="#97d18c"/>
+      <g transform="translate(104 34) scale(0.62)"><g fill="#000">
+        <rect x="-6" y="-40" width="12" height="16" rx="3"/><rect x="-6" y="24" width="12" height="16" rx="3"/>
+        <rect x="-40" y="-6" width="16" height="12" rx="3"/><rect x="24" y="-6" width="16" height="12" rx="3"/>
+        <rect x="-6" y="-40" width="12" height="16" rx="3" transform="rotate(45)"/><rect x="-6" y="24" width="12" height="16" rx="3" transform="rotate(45)"/>
+        <rect x="-40" y="-6" width="16" height="12" rx="3" transform="rotate(45)"/><rect x="24" y="-6" width="16" height="12" rx="3" transform="rotate(45)"/>
+        <circle r="27"/></g><circle r="11" fill="#d1ffca"/></g>
+      <circle cx="166" cy="112" r="5" fill="#fff100"/>
+      <text x="176" y="116" font-family="JetBrains Mono, monospace" font-size="11" fill="#444">auto</text>
+    </svg>
+    <div class="swipe mono"><span>Client names stay private</span><span class="tag">Swipe →</span></div>
+  </section>
+
+  <section class="slide slide--dark">
+    ${head(2, true)}
+    <div class="kicker mono">The problem</div>
+    <h1 class="h display">Stacks of PDFs. <em>Every day.</em></h1>
+    <p class="p">The trader's market agents report back in fixed-format PDFs. Someone had to turn them into numbers the business could use.</p>
+    <ul class="before">
+      <li><span class="x">×</span><span>Every report read and typed in by hand</span></li>
+      <li><span class="x">×</span><span>Every payment matched to its sales by hand</span></li>
+      <li><span class="x">×</span><span>Stock on the market floor that nobody had reported yet</span></li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    ${head(3)}
+    <div class="kicker mono">What we built · 01</div>
+    <h1 class="h display">Reports pull themselves, <em>every morning.</em></h1>
+    <p class="p">An agent pulls yesterday's sales and payments from the market portal and reads them. No retyping.</p>
+    ${shot('phone-tracking.jpg', 'Meri Fruits · Tracking', true)}
+  </section>
+
+  <section class="slide">
+    ${head(4)}
+    <div class="kicker mono">What we built · 02</div>
+    <h1 class="h display">Every payment matched. <em>To the cent.</em></h1>
+    <p class="p">Payments reconciled against deliveries, with anything unusual flagged for a person to ask about.</p>
+    ${shot('reconcile.jpg', 'Sales & Payments · Reconcile')}
+  </section>
+
+  <section class="slide">
+    ${head(5)}
+    <div class="kicker mono">What we built · 03</div>
+    <h1 class="h display">What to send <em>where.</em></h1>
+    <p class="p">Stock tracked from the trader's own delivery notes, and a buy plan and dispatch sheets built from what actually sold.</p>
+    ${shot('supply.jpg', "Procurement · Supplier's stock this week")}
+  </section>
+
+  <section class="slide slide--dark">
+    ${head(6, true)}
+    <div class="kicker mono">Your operation</div>
+    <h1 class="h h--xl display">Where would AI <em>pay</em> for you?</h1>
+    <div class="cta">
+      <div class="display">Free AI Opportunity Map</div>
+      <p>One page on where AI would genuinely pay in your operation, where it honestly wouldn't be worth it, and what a first build would cost.</p>
+      <span class="tag">Comment "MAP" or send us a message →</span>
+    </div>
+    <div class="foot mono"><span>Meri.Software · Operations automation agency</span><span>Cape Town · worldwide</span></div>
+  </section>`);
+
+  // ?s=N renders just that slide, for PNG export
+  const only = new URLSearchParams(location.search).get('s');
+  if (only) document.querySelectorAll('.slide').forEach((el, i) => { if (i + 1 !== +only) el.remove(); });
+</script>
+</body>
+</html>

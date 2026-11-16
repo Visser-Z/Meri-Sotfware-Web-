@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LinkedIn cover · 1128×191</title>
+<link rel="stylesheet" href="li.css">
+<style>
+  /* LinkedIn company cover: 1128×191. The page logo overlaps the bottom-left corner on desktop,
+     and the mobile app trims the sides, so the message sits in the middle band. */
+  .banner {
+    position: relative;
+    width: 1128px;
+    height: 191px;
+    background: var(--color-carbon-black);
+    color: var(--color-paper-white);
+    overflow: hidden;
+  }
+  .banner__grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(to right, #161616 1px, transparent 1px),
+      linear-gradient(to bottom, #161616 1px, transparent 1px);
+    background-size: 32px 32px;
+    background-position: -1px -1px;
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 30%, #000 70%, transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0, #000 30%, #000 70%, transparent 100%);
+  }
+  .banner__copy {
+    position: absolute;
+    left: 236px;
+    top: 34px;
+  }
+  .banner__kicker {
+    font-size: 11px;
+    color: var(--color-smoke);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .banner__kicker .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--color-mint-chip); }
+  .banner__headline {
+    margin-top: 12px;
+    font-size: 72px;
+    color: var(--color-paper-white);
+  }
+  .banner__headline span { color: var(--color-mint-chip); }
+  .banner__services {
+    margin-top: 14px;
+    font-size: 11px;
+    color: var(--color-smoke);
+    letter-spacing: 0.06em;
+  }
+  .banner__services b { color: var(--color-slate); font-weight: 400; margin: 0 8px; }
+  .banner__art {
+    position: absolute;
+    right: 36px;
+    top: 6px;
+    width: 220px;
+    height: 191px;
+  }
+
+  /* ?guides shows where LinkedIn covers the cover */
+  .guides .guide { position: absolute; border: 1.5px dashed #ff4d4d; color: #ff4d4d; font: 10px var(--font-suisseintlmono); padding: 4px; }
+  .guide { display: none; }
+  .guides .guide { display: block; }
+</style>
+</head>
+<body>
+  <div class="banner" id="banner">
+    <div class="banner__grid"></div>
+
+    <div class="banner__copy">
+      <div class="banner__kicker mono"><span class="dot"></span>Operations automation agency · Cape Town · worldwide</div>
+      <h1 class="banner__headline display">Operations, <span>automated.</span></h1>
+      <div class="banner__services mono">Document capture<b>/</b>Reconciliation<b>/</b>Quoting<b>/</b>Compliance<b>/</b>Live dashboards</div>
+    </div>
+
+    <!-- The site's hero block, reduced: the operation, running itself -->
+    <svg class="banner__art" viewBox="0 0 220 191" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <ellipse cx="104" cy="172" rx="84" ry="9" fill="#1c1c1c"/>
+      <!-- graphite slab -->
+      <polygon points="104,104 178,136 104,168 30,136" fill="#2f2f2f"/>
+      <polygon points="30,136 104,168 104,176 30,144" fill="#1f1f1f"/>
+      <polygon points="104,168 178,136 178,144 104,176" fill="#262626"/>
+      <!-- mint block -->
+      <polygon points="104,60 146,82 104,104 62,82" fill="#d1ffca"/>
+      <polygon points="62,82 104,104 104,150 62,128" fill="#b4eaab"/>
+      <polygon points="104,104 146,82 146,128 104,150" fill="#97d18c"/>
+      <!-- gear -->
+      <g transform="translate(104 34) scale(0.62)">
+        <g fill="#fff">
+          <rect x="-6" y="-40" width="12" height="16" rx="3"/>
+          <rect x="-6" y="24" width="12" height="16" rx="3"/>
+          <rect x="-40" y="-6" width="16" height="12" rx="3"/>
+          <rect x="24" y="-6" width="16" height="12" rx="3"/>
+          <rect x="-6" y="-40" width="12" height="16" rx="3" transform="rotate(45)"/>
+          <rect x="-6" y="24" width="12" height="16" rx="3" transform="rotate(45)"/>
+          <rect x="-40" y="-6" width="16" height="12" rx="3" transform="rotate(45)"/>
+          <rect x="24" y="-6" width="16" height="12" rx="3" transform="rotate(45)"/>
+          <circle r="27"/>
+        </g>
+        <circle r="11" fill="#000"/>
+      </g>
+      <!-- auto -->
+      <circle cx="166" cy="112" r="5" fill="#fff100"/>
+      <text x="176" y="116" font-family="JetBrains Mono, monospace" font-size="11" fill="#979797">auto</text>
+    </svg>
+
+    <div class="guide" style="left:16px; top:120px; width:180px; height:71px;">logo overlap (desktop)</div>
+    <div class="guide" style="left:0; top:0; width:150px; height:191px; border-style:dotted;">mobile trim</div>
+    <div class="guide" style="right:0; top:0; width:150px; height:191px; border-style:dotted;">mobile trim</div>
+  </div>
+  <script>
+    if (location.search.includes('guides')) document.getElementById('banner').classList.add('guides');
+  </script>
+</body>
+</html>

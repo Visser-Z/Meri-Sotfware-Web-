@@ -1,0 +1,57 @@
+/* LinkedIn brand assets: shares the site's tokens so the page and the profile stay one brand */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;450;500&family=JetBrains+Mono:wght@400&display=block');
+@import url('../../../css/variables.css');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--color-carbon-black); }
+body {
+  font-family: var(--font-suisseintl);
+  color: var(--color-carbon-black);
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+.display {
+  font-family: var(--font-suisseintlcond);
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+}
+.mono {
+  font-family: var(--font-suisseintlmono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 22px;
+  border-radius: var(--radius-tags);
+  background: var(--color-mint-chip);
+  color: var(--color-carbon-black);
+  font-family: var(--font-suisseintlmono);
+  font-size: 20px;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.tag--ghost { background: var(--color-mist-gray); }
+.tag--dark { background: var(--color-graphite); color: var(--color-paper-white); }
+.tag--line { background: transparent; color: inherit; box-shadow: inset 0 0 0 1.5px currentColor; }
+
+/* Wordmark, as in the site nav */
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-weight: 500;
+  font-size: 28px;
+  letter-spacing: -0.02em;
+}
+.wordmark img { width: 58px; height: auto; }
+.wordmark b { font-weight: 500; }
+.wordmark i { font-style: normal; color: var(--color-smoke); }
