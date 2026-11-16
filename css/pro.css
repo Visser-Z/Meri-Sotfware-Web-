@@ -186,3 +186,25 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 .cat--more .btn { min-height: 46px; }
 @media (max-width: 960px) { .cats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 640px) { .cats { grid-template-columns: minmax(0, 1fr); } }
+
+/* Home: the two offers side by side */
+.offers { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 44px; border: 1px solid var(--ink-200); }
+.offer { display: flex; flex-direction: column; padding: 32px 30px 34px; background: #fff; }
+.offer + .offer { border-left: 1px solid var(--ink-200); }
+.offer--ai { background: var(--accent-50); }
+.offer h3 { margin: 14px 0 10px; font-size: 32px; }
+.offer > p { color: var(--ink-600); font-size: 17px; }
+.offer ul { margin: 18px 0 26px; }
+.offer li { position: relative; padding: 6px 0 6px 20px; color: var(--ink-700); font-size: 16px; }
+.offer li::before { content: ""; position: absolute; left: 0; top: 14px; width: 7px; height: 7px; background: var(--accent-600); }
+.offer .btn { align-self: flex-start; margin-top: auto; }
+
+/* Status tag on work examples */
+.tag { display: inline-block; margin-top: 16px; padding: 4px 11px; border-radius: 999px; font: 600 13px/1.3 var(--body); background: var(--ink-100); color: var(--ink-700); }
+.tag--live { background: #dcfce7; color: var(--green); }
+.cat > p { color: var(--ink-600); font-size: 16px; line-height: 1.5; }
+
+@media (max-width: 760px) {
+  .offers { grid-template-columns: minmax(0, 1fr); }
+  .offer + .offer { border-left: 0; border-top: 1px solid var(--ink-200); }
+}
