@@ -208,3 +208,29 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   .offers { grid-template-columns: minmax(0, 1fr); }
   .offer + .offer { border-left: 0; border-top: 1px solid var(--ink-200); }
 }
+
+/* Case study: a framed screenshot in the hero, and modules with their screens */
+.shot { display: block; border: 1px solid rgba(169, 214, 209, 0.28); background: var(--ink-950); }
+.shot img { display: block; width: 100%; height: auto; }
+.shot__cap { display: flex; justify-content: space-between; padding: 10px 14px; border-top: 1px solid rgba(169, 214, 209, 0.2); font: 600 12px/1 var(--display); letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-200); }
+.sect .shot { border-color: var(--ink-200); background: #fff; }
+.sect .shot__cap { border-top-color: var(--ink-200); color: var(--ink-600); }
+.steps--four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.mods { margin-top: 20px; }
+.mod { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 48px; align-items: center; padding: 56px 0; border-top: 1px solid var(--ink-200); }
+.mod:first-child { border-top: 0; }
+.mod:nth-child(even) .mod__text { order: 2; }
+.mod__num { font: 600 13px/1 var(--display); letter-spacing: 0.14em; color: var(--accent-600); }
+.mod h3 { margin: 12px 0 10px; font-size: clamp(26px, 2.6vw, 34px); }
+.mod p { color: var(--ink-600); font-size: 17px; }
+.mod ul { margin-top: 16px; }
+.mod li { position: relative; padding: 6px 0 6px 20px; color: var(--ink-700); font-size: 16px; line-height: 1.45; }
+.mod li::before { content: ""; position: absolute; left: 0; top: 14px; width: 7px; height: 7px; background: var(--accent-600); }
+.mod .shot img { max-height: 520px; object-fit: contain; object-position: top; background: var(--ink-50); }
+.phone-shot { max-width: 300px; justify-self: center; }
+@media (max-width: 960px) {
+  .steps--four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .mod { grid-template-columns: minmax(0, 1fr); gap: 26px; padding: 40px 0; }
+  .mod:nth-child(even) .mod__text { order: 0; }
+}
+@media (max-width: 640px) { .steps--four { grid-template-columns: minmax(0, 1fr); } }
